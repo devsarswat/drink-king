@@ -1,0 +1,215 @@
+{
+    "teas": [
+      {
+        "name": "Black Tea",
+        "description": "A fully oxidized tea with a bold and robust flavor.",
+        "origin": "Various",
+        "strength": "Strong",
+        "price": "Rs. 150"
+      },
+      {
+        "name": "Green Tea",
+        "description": "A lightly oxidized tea with a delicate and grassy flavor.",
+        "origin": "Various",
+        "strength": "Medium",
+        "price": "Rs. 120"
+      },
+      {
+        "name": "White Tea",
+        "description": "A minimally processed tea with a subtle and delicate flavor.",
+        "origin": "Various",
+        "strength": "Light",
+        "price": "Rs. 180"
+      },
+      {
+        "name": "Oolong Tea",
+        "description": "A partially oxidized tea with a diverse range of flavors, from floral to toasty.",
+        "origin": "Various",
+        "strength": "Medium",
+        "price": "Rs. 200"
+      },
+      {
+        "name": "Herbal Tea",
+        "description": "A caffeine-free infusion made from dried herbs, fruits, flowers, or spices.",
+        "origin": "Various",
+        "strength": "Varies",
+        "price": "Rs. 130"
+      },
+      {
+        "name": "Chai Tea",
+        "description": "A spiced tea blend with black tea, milk, and a combination of spices.",
+        "origin": "Various",
+        "strength": "Strong",
+        "price": "Rs. 160"
+      },
+      {
+        "name": "Earl Grey Tea",
+        "description": "A flavored black tea infused with bergamot oil.",
+        "origin": "Various",
+        "strength": "Medium",
+        "price": "Rs. 140"
+      },
+      {
+        "name": "Jasmine Tea",
+        "description": "A scented tea made by blending green tea leaves with jasmine flowers.",
+        "origin": "Various",
+        "strength": "Light",
+        "price": "Rs. 150"
+      },
+      {
+        "name": "Matcha Tea",
+        "description": "A powdered green tea whisked into hot water.",
+        "origin": "Japan",
+        "strength": "Medium",
+        "price": "Rs. 250"
+      },
+      {
+        "name": "Rooibos Tea",
+        "description": "A caffeine-free herbal tea made from the leaves of the Rooibos plant.",
+        "origin": "South Africa",
+        "strength": "Medium",
+        "price": "Rs. 170"
+      },
+      {
+        "name": "Darjeeling Tea",
+        "description": "A black tea from the Darjeeling region of India with a muscatel flavor.",
+        "origin": "India",
+        "strength": "Medium",
+        "price": "Rs. 190"
+      },
+      {
+        "name": "Assam Tea",
+        "description": "A bold and malty black tea from the Assam region of India.",
+        "origin": "India",
+        "strength": "Strong",
+        "price": "Rs. 160"
+      },
+      {
+        "name": "Pu-erh Tea",
+        "description": "A fermented tea with an earthy and rich flavor.",
+        "origin": "China",
+        "strength": "Strong",
+        "price": "Rs. 220"
+      },
+      {
+        "name": "Sencha Tea",
+        "description": "A popular Japanese green tea with a refreshing and grassy flavor.",
+        "origin": "Japan",
+        "strength": "Light",
+        "price": "Rs. 180"
+      },
+      {
+        "name": "Gunpowder Tea",
+        "description": "A Chinese green tea rolled into small pellets resembling gunpowder.",
+        "origin": "China",
+        "strength": "Medium",
+        "price": "Rs. 170"
+      },
+      {
+        "name": "Genmaicha",
+        "description": "A Japanese green tea blended with toasted rice.",
+        "origin": "Japan",
+        "strength": "Medium",
+        "price": "Rs. 200"
+      },
+      {
+        "name": "Chamomile Tea",
+        "description": "An herbal tea made from dried chamomile flowers.",
+        "origin": "Various",
+        "strength": "Light",
+        "price": "Rs. 140"
+      },
+      {
+        "name": "Peppermint Tea",
+        "description": "A refreshing herbal tea made from dried peppermint leaves.",
+        "origin": "Various",
+        "strength": "Light",
+        "price": "Rs. 130"
+      },
+      {
+        "name": "Hibiscus Tea",
+        "description": "A vibrant red herbal tea made from the dried petals of the hibiscus flower.",
+        "origin": "Various",
+        "strength": "Medium",
+        "price": "Rs. 150"
+      },
+      {
+        "name": "Lemon Ginger Tea",
+        "description": "A herbal tea blend combining the zesty flavor of lemon with the warmth of ginger.",
+        "origin": "Various",
+        "strength": "Medium",
+        "price": "Rs. 160"
+      },
+      {
+        "name": "White Peony Tea",
+        "description": "A type of white tea made from the young leaves and unopened buds of the tea plant.",
+        "origin": "Various",
+        "strength": "Light",
+        "price": "Rs. 190"
+      },
+      {
+        "name": "Earl Grey Green Tea",
+        "description": "A variation of Earl Grey tea where green tea leaves are scented with bergamot oil.",
+        "origin": "Various",
+        "strength": "Medium",
+        "price": "Rs. 170"
+      },
+      {
+        "name": "Yerba Mate",
+        "description": "A traditional South American herbal tea made from the leaves of the yerba mate plant.",
+        "origin": "South America",
+        "strength": "Strong",
+        "price": "Rs. 210"
+      },
+      {
+        "name": "Mint Tea",
+        "description": "A herbal tea made from spearmint or peppermint leaves.",
+        "origin": "Various",
+        "strength": "Light",
+        "price": "Rs. 140"
+      },
+      {
+        "name": "Rooibos Chai",
+        "description": "A caffeine-free version of chai tea made with rooibos as the base.",
+        "origin": "Various",
+        "strength": "Medium",
+        "price": "Rs. 180"
+      },
+      {
+        "name": "Lemon Verbena Tea",
+        "description": "An herbal tea made from the leaves of the lemon verbena plant.",
+        "origin": "Various",
+        "strength": "Light",
+        "price": "Rs. 160"
+      },
+      {
+        "name": "White Silver Needle Tea",
+        "description": "A highly prized white tea made from the unopened buds of the tea plant.",
+        "origin": "Various",
+        "strength": "Light",
+        "price": "Rs. 250"
+      },
+      {
+        "name": "Jasmine Dragon Pearl Tea",
+        "description": "A high-quality green tea scented with jasmine flowers and hand-rolled into small pearls.",
+        "origin": "Various",
+        "strength": "Light",
+        "price": "Rs. 230"
+      },
+      {
+        "name": "Darjeeling First Flush Tea",
+        "description": "A premium black tea from the first harvest of the season in the Darjeeling region.",
+        "origin": "India",
+        "strength": "Light",
+        "price": "Rs. 240"
+      },
+      {
+        "name": "Ceylon Tea",
+        "description": "A black tea from Sri Lanka (formerly Ceylon) with varying flavors and strengths.",
+        "origin": "Sri Lanka",
+        "strength": "Varies",
+        "price": "Rs. 220"
+      }
+    ]
+  }
+  

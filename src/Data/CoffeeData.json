@@ -1,0 +1,252 @@
+{
+  "varieties": [
+    {
+      "name": "Espresso",
+      "description": "A concentrated coffee beverage brewed by forcing hot water under high pressure through finely ground coffee.",
+      "origin": "Italy",
+      "strength": "Strong",
+      "price": "Rs.150",
+      "image": " https://source.unsplash.com/960x520/?coffee,Espresso"
+    },
+    {
+      "name": "Cappuccino",
+      "description": "A coffee-based drink made with espresso, hot milk, and steamed milk foam.",
+      "origin": "Italy",
+      "strength": "Medium",
+      "price": "Rs.180",
+      "image": " https://source.unsplash.com/960x520/?coffee,Cappuccino"
+    },
+    {
+      "name": "Latte",
+      "description": "A coffee drink made with espresso and steamed milk.",
+      "origin": "Italy",
+      "strength": "Medium",
+      "price": "Rs.170",
+      "image": " https://source.unsplash.com/960x520/?coffee,Latte"
+    },
+    {
+      "name": "Americano",
+      "description": "A diluted espresso drink made by adding hot water to espresso shots.",
+      "origin": "United States",
+      "strength": "Medium",
+      "price": "Rs.160",
+      "image": " https://source.unsplash.com/960x520/?coffee,americano"
+    },
+    {
+      "name": "Macchiato",
+      "description": "An espresso coffee drink with a small amount of foamed milk.",
+      "origin": "Italy",
+      "strength": "Strong",
+      "price": "Rs.140",
+      "image": " https://source.unsplash.com/960x520/?coffee,macchiato"
+    },
+    {
+      "name": "Mocha",
+      "description": "A coffee drink made with espresso, hot chocolate, and steamed milk.",
+      "origin": "Unknown",
+      "strength": "Medium",
+      "price": "Rs.190",
+      "image": " https://source.unsplash.com/960x520/?coffee,mocha"
+    },
+    {
+      "name": "Flat White",
+      "description": "An espresso-based coffee drink with velvety steamed milk and a thin layer of microfoam.",
+      "origin": "Australia/New Zealand",
+      "strength": "Medium",
+      "price": "Rs.200",
+      "image": " https://source.unsplash.com/960x520/?coffee,flat white"
+    },
+    {
+      "name": "Affogato",
+      "description": "A dessert coffee made by pouring a shot of hot espresso over a scoop of ice cream or gelato.",
+      "origin": "Italy",
+      "strength": "Medium",
+      "price": "Rs.220",
+      "image": " https://source.unsplash.com/960x520/?coffee,affogato"
+    },
+    {
+      "name": "Turkish Coffee",
+      "description": "A method of brewing coffee where very finely ground coffee is simmered in a pot and served unfiltered.",
+      "origin": "Turkey",
+      "strength": "Strong",
+      "price": "Rs.180",
+      "image": " https://source.unsplash.com/960x520/?coffee,turkish coffee"
+    },
+    {
+      "name": "Irish Coffee",
+      "description": "A cocktail consisting of hot coffee, Irish whiskey, sugar, and topped with whipped cream.",
+      "origin": "Ireland",
+      "strength": "Medium",
+      "price": "Rs.250",
+      "image": " https://source.unsplash.com/960x520/?coffee,irish coffee"
+    },
+    {
+      "name": "Frappuccino",
+      "description": "A blended coffee beverage made with ice, coffee, milk, and flavored syrups.",
+      "origin": "United States",
+      "strength": "Medium",
+      "price": "Rs.200",
+      "image": " https://source.unsplash.com/960x520/?coffee,frappuccino"
+    },
+    {
+      "name": "Lungo",
+      "description": "A long-pulled shot of espresso, brewed with more water for a milder taste.",
+      "origin": "Italy",
+      "strength": "Medium",
+      "price": "Rs.160",
+      "image": " https://source.unsplash.com/960x520/?coffee,lungo"
+    },
+    {
+      "name": "Ristretto",
+      "description": "A short-pulled shot of espresso, brewed with less water for a stronger taste.",
+      "origin": "Italy",
+      "strength": "Strong",
+      "price": "Rs.170",
+      "image": " https://source.unsplash.com/960x520/?coffee,ristretto"
+    },
+    {
+      "name": "Vienna Coffee",
+      "description": "A coffee drink made with black coffee, whipped cream, and chocolate shavings.",
+      "origin": "Austria",
+      "strength": "Medium",
+      "price": "Rs.210",
+      "image": " https://source.unsplash.com/960x520/?coffee,vienna coffee"
+    },
+    {
+      "name": "Cortado",
+      "description": "A coffee drink made with espresso and a small amount of warm milk.",
+      "origin": "Spain",
+      "strength": "Medium",
+      "price": "Rs.180",
+      "image": " https://source.unsplash.com/960x520/?coffee,cortado"
+    },
+    {
+      "name": "Long Black",
+      "description": "A coffee beverage made by pouring a double shot of espresso over hot water.",
+      "origin": "Australia/New Zealand",
+      "strength": "Medium",
+      "price": "Rs.190",
+      "image": " https://source.unsplash.com/960x520/?coffee,long black Coffee"
+    },
+    {
+      "name": "Piccolo Latte",
+      "description": "A smaller version of a latte, typically served in a small glass.",
+      "origin": "Australia",
+      "strength": "Medium",
+      "price": "Rs.200",
+      "image": " https://source.unsplash.com/960x520/?coffee,piccolo latte"
+    },
+    {
+      "name": "Pour Over",
+      "description": "A manual brewing method where hot water is poured over coffee grounds in a filter.",
+      "origin": "Unknown",
+      "strength": "Medium",
+      "price": "Rs.180",
+      "image": " https://source.unsplash.com/960x520/?coffee,pour over"
+    },
+    {
+      "name": "French Press",
+      "description": "A coffee brewing device that uses a plunger to press the coffee grounds to the bottom after steeping.",
+      "origin": "France",
+      "strength": "Medium",
+      "price": "Rs.190",
+      "image": " https://source.unsplash.com/960x520/?coffee,french press"
+    },
+    {
+      "name": "Aeropress",
+      "description": "A coffee brewing device that uses air pressure to extract flavors quickly.",
+      "origin": "United States",
+      "strength": "Medium",
+      "price": "Rs.170",
+      "image": " https://source.unsplash.com/960x520/?coffee,aeropress"
+    },
+    {
+      "name": "Chemex",
+      "description": "A pour-over coffee maker known for its hourglass shape and thick filter.",
+      "origin": "United States",
+      "strength": "Medium",
+      "price": "Rs.200",
+      "image": " https://source.unsplash.com/960x520/?coffee,chemex"
+    },
+    {
+      "name": "Ethiopian Yirgacheffe",
+      "description": "A coffee variety known for its fruity and floral flavors, grown in Ethiopia.",
+      "origin": "Ethiopia",
+      "strength": "Medium",
+      "price": "Rs.250",
+      "image": " https://source.unsplash.com/960x520/?coffee,ethiopian yirgacheffe"
+    },
+    {
+      "name": "Colombian Supremo",
+      "description": "A high-quality coffee from Colombia, known for its smooth and balanced flavors.",
+      "origin": "Colombia",
+      "strength": "Medium",
+      "price": "Rs.230",
+      "image": " https://source.unsplash.com/960x520/?coffee,colombian supremo"
+    },
+    {
+      "name": "Brazilian Santos",
+      "description": "A coffee variety from Brazil, typically mild and nutty in flavor.",
+      "origin": "Brazil",
+      "strength": "Medium",
+      "price": "Rs.220",
+      "image": " https://source.unsplash.com/960x520/?coffee,brazilian santos"
+    },
+    {
+      "name": "Jamaican Blue Mountain",
+      "description": "One of the most sought-after coffees, grown in the Blue Mountains of Jamaica, known for its mild flavor and lack of bitterness.",
+      "origin": "Jamaica",
+      "strength": "Medium",
+      "price": "Rs.350",
+      "image": " https://source.unsplash.com/960x520/?coffee,jamaican blue mountain"
+    },
+    {
+      "name": "Costa Rican Tarrazu",
+      "description": "A high-quality coffee from the Tarrazu region of Costa Rica, known for its bright acidity and full body.",
+      "origin": "Costa Rica",
+      "strength": "Medium",
+      "price": "Rs.240",
+      "image": " https://source.unsplash.com/960x520/?coffee,costa rican tarrazu"
+    },
+    {
+      "name": "Guatemalan Antigua",
+      "description": "A coffee variety from the Antigua region of Guatemala, known for its complex flavors and floral aroma.",
+      "origin": "Guatemala",
+      "strength": "Medium",
+      "price": "Rs.260",
+      "image": " https://source.unsplash.com/960x520/?coffee,guatemalan antigua"
+    },
+    {
+      "name": "Mexican Chiapas",
+      "description": "A coffee variety from the Chiapas region of Mexico, known for its smooth and chocolatey flavors.",
+      "origin": "Mexico",
+      "strength": "Medium",
+      "price": "Rs.220",
+      "image": " https://source.unsplash.com/960x520/?coffee,mexican chiapas"
+    },
+    {
+      "name": "Tanzanian Peaberry",
+      "description": "A coffee variety from Tanzania, where only one seed develops inside the coffee cherry, resulting in a smaller, rounder, and more flavorful bean.",
+      "origin": "Tanzania",
+      "strength": "Medium",
+      "price": "Rs.280",
+      "image": " https://source.unsplash.com/960x520/?coffee,tanzanian peaberry"
+    },
+    {
+      "name": "Vietnamese Iced Coffee",
+      "description": "A strong and sweet coffee drink typically made with dark roasted coffee and sweetened condensed milk.",
+      "origin": "Vietnam",
+      "strength": "Strong",
+      "price": "Rs.190",
+      "image": " https://source.unsplash.com/960x520/?coffee,vietnamese iced coffee"
+    },
+    {
+      "name": "Turkish Coffee",
+      "description": "A method of brewing coffee where very finely ground coffee is simmered in a pot and served unfiltered.",
+      "origin": "Turkey",
+      "strength": "Strong",
+      "price": "Rs.180",
+      "image": " https://source.unsplash.com/960x520/?coffee,turkish coffee"
+    }
+  ]
+}
