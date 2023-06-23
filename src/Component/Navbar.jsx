@@ -1,12 +1,20 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Acontext } from "../App";
+import { BsPersonFill, BsCartFill, BsGearFill, BsBoxArrowRight } from 'react-icons/bs';
+
+import profileIcon from '../Images/account_thin.svg'; 
 
 const Navbar = () => {
   const { search, setSearch } = useContext(Acontext);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const handleSearchChange = (event) => {
     setSearch(event.target.value);
+  };
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
   };
 
   return (
@@ -34,11 +42,6 @@ const Navbar = () => {
               </NavLink>
             </li>
             <li className="nav-item mx-2">
-              <NavLink className="nav-link" to="/login">
-                Login
-              </NavLink>
-            </li>
-            <li className="nav-item mx-2">
               <NavLink className="nav-link" to="/coffee">
                 Coffee
               </NavLink>
@@ -55,9 +58,36 @@ const Navbar = () => {
               />
             </li>
             <li className="nav-item mx-2">
-              <NavLink className="nav-link" to="/">
-                Profile
-              </NavLink>
+              <button
+                className="btn btn-link nav-link"
+                onClick={toggleDropdown}
+              >
+                <img src={profileIcon} alt="Profile" className="profile-icon" /> 
+              </button>
+              {isDropdownOpen && (
+                <ul className="dropdown-menu dropdown-menu-start show">
+                  <li>
+                    <Link className="dropdown-item" to="/" onClick={toggleDropdown}>
+                      <BsPersonFill className="me-2" /> Profile
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" to="/" onClick={toggleDropdown}>
+                      <BsCartFill className="me-2" /> Cart
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" to="/" onClick={toggleDropdown}>
+                      <BsGearFill className="me-2" /> Settings
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" to="/" onClick={toggleDropdown}>
+                      <BsBoxArrowRight className="me-2" /> Logout
+                    </Link>
+                  </li>
+                </ul>
+              )}
             </li>
           </ul>
         </div>

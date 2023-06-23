@@ -1,7 +1,7 @@
 import React, { createContext, useState } from "react";
 import Navbar from "./Component/Navbar";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import "../node_modules/bootstrap/dist/js/bootstrap.bundle";
+import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
 import { Routes, Route } from "react-router-dom";
 import Home from "./Component/Home";
 import Login from "./Component/Login";

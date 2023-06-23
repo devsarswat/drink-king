@@ -1,4 +1,4 @@
-import React, { useState ,useContext} from 'react';
+import React, { useState ,useContext,useEffect} from 'react';
 import { Card, CardContent, CardMedia, Typography, Button } from '@mui/material';
 import data from '../Data/CoffeeData.json';
 import { Acontext } from "../App";
@@ -8,15 +8,22 @@ const ITEMS_PER_PAGE = 6;
 const GetData = () => {
   const { search } = useContext(Acontext);
   const [currentPage, setCurrentPage] = useState(1);
-  const searchQuery = search ? search.toString().toLowerCase() : ''; 
+  const [filteredVarieties, setFilteredVarieties] = useState([]);
 
+  useEffect(() => {
+    const searchQuery = search ? search.toString().toLowerCase() : '';
+
+    const filteredData = data.varieties.filter((variety) =>
+      variety.name.toLowerCase().includes(searchQuery)
+    );
+
+    setFilteredVarieties(filteredData);
+    setCurrentPage(1);
+  }, [search]);
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
 
-  const filteredVarieties = data.varieties.filter((variety) =>
-    variety.name.toLowerCase().includes(searchQuery)
-  );
 
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
   const displayedVarieties = filteredVarieties.slice(startIndex, startIndex + ITEMS_PER_PAGE);

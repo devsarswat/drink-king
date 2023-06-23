@@ -48,3 +48,13 @@
   margin-left: 100px;
   padding-top: 5px;
 }
+.profile-icon {
+  font-size: 20px; 
+  color: black; 
+}
+
+.dropdown-menu {
+  right: 15px;
+  /* left: auto; */
+  
+}
