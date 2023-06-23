@@ -1,51 +1,32 @@
-import React, { useState } from 'react';
-import { Card, CardContent, CardMedia, Typography, Button, TextField } from '@mui/material';
+import React, { useState ,useContext} from 'react';
+import { Card, CardContent, CardMedia, Typography, Button } from '@mui/material';
 import data from '../Data/CoffeeData.json';
-
+import { Acontext } from "../App";
 
 const ITEMS_PER_PAGE = 6;
 
 const GetData = () => {
+  const { search } = useContext(Acontext);
   const [currentPage, setCurrentPage] = useState(1);
-  const [searchQuery, setSearchQuery] = useState('');
+  const searchQuery = search ? search.toString().toLowerCase() : ''; 
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
 
-  const handleSearchChange = (event) => {
-    setSearchQuery(event.target.value);
-    setCurrentPage(1); // Reset the current page when the search query changes
-  };
-
   const filteredVarieties = data.varieties.filter((variety) =>
-    variety.name.toLowerCase().includes(searchQuery.toLowerCase())
+    variety.name.toLowerCase().includes(searchQuery)
   );
 
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
   const displayedVarieties = filteredVarieties.slice(startIndex, startIndex + ITEMS_PER_PAGE);
 
   return (
-    <div className='Sbar'>
-      <div className="search-bar-container">
-        <TextField
-          label="Search"
-          variant="outlined"
-          value={searchQuery}
-          onChange={handleSearchChange}
-          className="search-bar"
-        />
-      </div>
-
+    <div className="Sbar">
       <div className="card-container">
         {displayedVarieties.map((variety, index) => (
           <Card key={index} className="card">
-            <CardMedia
-              component="img"
-              height="140"
-              image={variety.image}
-              alt={variety.name}
-            />
+            <CardMedia component="img" height="140" image={variety.image} alt={variety.name} />
             <CardContent>
               <Typography variant="h5" component="div">
                 {variety.name}
@@ -53,13 +34,7 @@ const GetData = () => {
               <Typography variant="body2" color="text.secondary">
                 {variety.description}
               </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Origin: {variety.origin}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Strength: {variety.strength}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography variant="body2" color="text.secondary my-2">
                 Price: {variety.price}
               </Typography>
               <Button variant="contained" color="primary" className="buy-now-button my-2 mx-2">
