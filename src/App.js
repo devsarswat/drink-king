@@ -4,6 +4,7 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
 import { Routes, Route } from "react-router-dom";
 import Login from "./Component/Login";
+import Signin from "./Component/Signin";
 import GetData from "./Component/GetData";
 import coffee from './Data/CoffeeData.json'
 import Product from "./Component/Product";
@@ -25,10 +26,11 @@ const App=()=> {
       <Navbar  />
       <Routes>
         <Route path="/" element={<GetData />} />
-        <Route path="/login" element={<Login />} />
         <Route path="/product" element={<Product />} />
         <Route path="/data" element={<Data />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signin" element={<Signin />} />
       </Routes>
     </Acontext.Provider>
   );
