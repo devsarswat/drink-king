@@ -73,7 +73,7 @@ const Navbar = () => {
                   </li>
                   <li>
                     <Link className="dropdown-item" to="/cart" onClick={toggleDropdown}>
-                      <BsCartFill className="me-2" /> Cart
+                      <BsCartFill className="me-2" /> Cart 
                     </Link>
                   </li>
                   <li>

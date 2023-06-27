@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Acontext } from '../App';
 
 const Cart = () => {
-  const { cartItems, setCartItems} = useContext(Acontext);
+  const { cartItems, setCartItems } = useContext(Acontext);
 
   const handleRemoveItem = (itemIndex) => {
     // Create a new array with the item removed
@@ -12,20 +12,27 @@ const Cart = () => {
     setCartItems(updatedCartItems);
   };
 
+  const calculateTotalPrice = () => {
+    return cartItems.reduce((total, item) => total + parseFloat(item.price), 0);
+  };
+
   return (
     <div>
       <h2>Shopping Cart</h2>
       {cartItems.length === 0 ? (
         <p>Your cart is empty.</p>
       ) : (
-        <ul>
-          {cartItems.map((item, index) => (
-            <li key={index}>
-              {item.name} - {item.price}
-              <button onClick={() => handleRemoveItem(index)}>Remove</button>
-            </li>
-          ))}
-        </ul>
+        <div>
+          <ul>
+            {cartItems.map((item, index) => (
+              <li key={index}>
+                {item.name} - {item.price}
+                <button onClick={() => handleRemoveItem(index)}>Remove</button>
+              </li>
+            ))}
+          </ul>
+          <p>Total Price: {calculateTotalPrice()}</p>
+        </div>
       )}
     </div>
   );
