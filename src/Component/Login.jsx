@@ -1,13 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import axios from "axios";
-import { TextField, Button } from "@mui/material";
+import { TextField, Button, Typography} from "@mui/material";
 import validator from "validator";
+import { Acontext } from "../App";
+import {useNavigate} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 const Login = () => {
+  const{setisLogin}=useContext(Acontext);
   const data = { email: "", password: "" };
   const [formData, setFormData] = useState(data);
   const [errors, setErrors] = useState({});
+  const nevigate=useNavigate();
 
   const handleValue = (e) => {
     const { name, value } = e.target;
@@ -27,6 +32,8 @@ const Login = () => {
           alert("Login Successfully");
           // Handle successful login response here
           setFormData(data);
+          setisLogin(true);
+          nevigate('/')
         })
         .catch((error) => {
           console.log(error);
@@ -99,6 +106,12 @@ const Login = () => {
           >
             Login
           </Button>
+          <Typography variant="body1" className="register-link">
+            Don't have an account?{" "}
+            <Link to="/signin" color="inherit">
+              Register
+            </Link>
+          </Typography>
         </form>
       </div>
     </div>

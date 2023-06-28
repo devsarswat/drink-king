@@ -3,9 +3,11 @@ import { Link, NavLink } from 'react-router-dom';
 import { Acontext } from "../App";
 import { BsPersonFill, BsCartFill, BsGearFill, BsBoxArrowRight } from 'react-icons/bs';
 
+
 import profileIcon from '../Images/account_thin.svg'; 
 
 const Navbar = () => {
+  const {isLogin,setisLogin}=useContext(Acontext)
   const { search, setSearch } = useContext(Acontext);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -16,6 +18,10 @@ const Navbar = () => {
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
+  const handlelogot=()=>{
+    setIsDropdownOpen(!isDropdownOpen);
+    setisLogin(false);
+  }
 
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary ms-auto mb-2 mb-lg-0">
@@ -76,16 +82,29 @@ const Navbar = () => {
                       <BsCartFill className="me-2" /> Cart 
                     </Link>
                   </li>
-                  <li>
+                  
+                  {isLogin && (
+                    <>
+                    <li>
                     <Link className="dropdown-item" to="/" onClick={toggleDropdown}>
                       <BsGearFill className="me-2" /> Settings
                     </Link>
                   </li>
-                  <li>
-                    <Link className="dropdown-item" to="/" onClick={toggleDropdown}>
+                    <li>
+                    <Link className="dropdown-item" to="/" onClick={handlelogot} >
                       <BsBoxArrowRight className="me-2" /> Logout
                     </Link>
                   </li>
+                  </>
+                  )}
+                  {!isLogin && (
+                    <li>
+                    <Link className="dropdown-item" to="/login" onClick={handlelogot} >
+                      <BsBoxArrowRight className="me-2" /> Login
+                    </Link>
+                  </li>
+                  )}
+                  
                 </ul>
               )}
             </li>

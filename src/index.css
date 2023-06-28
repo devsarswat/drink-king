@@ -73,31 +73,6 @@
   z-index: 999;
 }
 
-
-.signin-form {
-  margin-top: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.signin-button {
-  margin-top: 15px !important;
-  height: 50px;
-  width: 15%;
-  font-size: 16px;
-  padding-top: 10px !important;
-}
-
-.signin-field {
-  margin-top: 15px;
-  width: 40%;
-  height: 60px;
-  font-size: 16px;
-}
-
-
 .card-content {
   display: flex;
   flex-wrap: wrap;
@@ -109,6 +84,29 @@
   flex: 1 0 calc(50% - 20px);
   margin: 10px;
   width: 100%;
+}
+
+.container{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  margin: 20px;
+  height: 70vh;
+
+}
+.image-container{
+  width: 500px;
+  margin-top: 20px;
+  margin: 30px;
+}
+.login-image{
+  width: 100%;
+  height: 300px;
+}
+.login-form-container{
+  width: 50%;
+  margin: 30px;
+  
 }
 .login-form {
   margin-top: 10px;
@@ -128,25 +126,39 @@
 
 .login-field {
   margin-top: 20px;
-  width: 40%;
+  width: 60%;
   height: 60px;
 }
-.container{
+
+
+.signin-form {
+  margin-top: 50px;
   display: flex;
-  justify-content: space-around;
-  flex-direction: row;
-  margin-top: 100px;
-  /* background-color: aqua; */
-  height: 100%;
-  width: 100vw;
+  flex-direction: column;
+  align-items: center;
 }
-.image-container{
-  width: 500px;
+
+.signin-button {
+  margin-top: 15px !important;
+  height: 50px;
+  width: 70%;
 }
-.login-image{
+
+.signin-field {
+  margin-top: 20px;
+  width: 70%;
+  height: 60px;
+}
+
+.signin-form-container{
+  width: 60%;
+  margin: 30px;
+  
+}
+.signin-image{
   width: 100%;
-  height: 300px;
+  height: 400px;
 }
-.login-form-container{
-  width: 50%;
+.register-link{
+  margin-top: 10px !important;
 }
