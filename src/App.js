@@ -10,6 +10,7 @@ import coffee from './Data/CoffeeData.json'
 import Product from "./Component/Product";
 import Data from "./Component/Data";
 import Cart from "./Component/Cart";
+import Profile from "./Component/Profile";
 export const Acontext = createContext();
 
 const App=()=> {
@@ -17,18 +18,20 @@ const App=()=> {
   const[isLogin,setisLogin]=useState(false);
   const [data, setdata] = useState([...coffee.Teadata, ...coffee.varieties]);
   const [cartItems, setCartItems] = useState([]);
+  const[user,setuser]=useState();
 
   // const handleLogout = () => {
   //   setSearch('');
   // };
 
   return (
-    <Acontext.Provider value={{ search, setSearch,data,setdata,cartItems, setCartItems,isLogin,setisLogin}}>
+    <Acontext.Provider value={{ search, setSearch,data,setdata,cartItems, setCartItems,isLogin,setisLogin,user,setuser}}>
       <Navbar  />
       <Routes>
         <Route path="/" element={<GetData />} />
         <Route path="/product" element={<Product />} />
         <Route path="/data" element={<Data />} />
+        <Route path="/profile" element={<PrivateRoute element={<Profile/>}/>} />
         <Route path="/cart" element={<PrivateRoute element={<Cart/>}/>} />
         <Route path="/login" element={<Login />} />
         <Route path="/signin" element={<Signin />} />

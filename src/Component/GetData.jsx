@@ -35,7 +35,7 @@ const GetData = () => {
     setSortType(prevSortType => (prevSortType === type ? null : type));
   };
 
-  const handleAddToCart = variety => {
+  const handleAddToCart = (variety) => {
     setCartItems(prevCartItems => [...prevCartItems, variety]);
   };
 

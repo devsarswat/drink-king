@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { TextField, Button } from "@mui/material";
+import { TextField, Button, Typography} from "@mui/material";
 import validator from "validator";
 import { useNavigate } from "react-router-dom";
 
@@ -47,26 +47,22 @@ const Signin = () => {
   const validateForm = () => {
     const errors = {};
 
-    // Validate name
     if (validator.isEmpty(formData.name)) {
       errors.name = "Name is required";
     }
 
-    // Validate email
     if (validator.isEmpty(formData.email)) {
       errors.email = "Email is required";
     } else if (!validator.isEmail(formData.email)) {
       errors.email = "Invalid email format";
     }
 
-    // Validate password
     if (validator.isEmpty(formData.password)) {
       errors.password = "Password is required";
     } else if (!validator.isLength(formData.password, { min: 6 })) {
       errors.password = "Password must be at least 6 characters long";
     }
 
-    // Validate confirmPassword
     if (validator.isEmpty(formData.confirmpassword)) {
       errors.confirmPassword = "Confirm Password is required";
     } else if (
@@ -75,7 +71,6 @@ const Signin = () => {
       errors.confirmPassword = "Passwords do not match";
     }
 
-    // Validate role
     if (validator.isEmpty(formData.role)) {
       errors.role = "Role is required";
     }
@@ -94,6 +89,9 @@ const Signin = () => {
       </div>
       <div className="signin-form-container">
         <form onSubmit={handleSubmit} className="signin-form">
+        <Typography variant="body1" className="heading-l">
+            Registration
+          </Typography>
           <TextField
             name="name"
             label="Name"

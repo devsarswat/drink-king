@@ -6,7 +6,7 @@
       "origin": "Italy",
       "strength": "Strong",
       "price": "150",
-      "image": " https://source.unsplash.com/960x520/?coffee,Espresso"
+      "image": "https://source.unsplash.com/960x520/?coffee,Espresso"
     },
     {
       "name": "Cappuccino",
@@ -14,7 +14,7 @@
       "origin": "Italy",
       "strength": "Medium",
       "price": "180",
-      "image": " https://source.unsplash.com/960x520/?coffee,Cappuccino"
+      "image": "https://source.unsplash.com/960x520/?coffee,Cappuccino"
     },
     {
       "name": "Latte",
@@ -22,7 +22,7 @@
       "origin": "Italy",
       "strength": "Medium",
       "price": "170",
-      "image": " https://source.unsplash.com/960x520/?coffee,Latte"
+      "image": "https://source.unsplash.com/960x520/?coffee,Latte"
     },
     {
       "name": "Americano",
@@ -30,7 +30,7 @@
       "origin": "United States",
       "strength": "Medium",
       "price": "160",
-      "image": " https://source.unsplash.com/960x520/?coffee,americano"
+      "image": "https://source.unsplash.com/960x520/?coffee,americano"
     },
     {
       "name": "Macchiato",
@@ -38,7 +38,7 @@
       "origin": "Italy",
       "strength": "Strong",
       "price": "140",
-      "image": " https://source.unsplash.com/960x520/?coffee,macchiato"
+      "image": "https://source.unsplash.com/960x520/?coffee,macchiato"
     },
     {
       "name": "Mocha",
@@ -46,7 +46,7 @@
       "origin": "Unknown",
       "strength": "Medium",
       "price": "190",
-      "image": " https://source.unsplash.com/960x520/?coffee,mocha"
+      "image": "https://source.unsplash.com/960x520/?coffee,mocha"
     },
     {
       "name": "Flat White",
@@ -54,7 +54,7 @@
       "origin": "Australia/New Zealand",
       "strength": "Medium",
       "price": "200",
-      "image": " https://source.unsplash.com/960x520/?coffee,flat white"
+      "image": "https://source.unsplash.com/960x520/?coffee,flat-white"
     },
     {
       "name": "Affogato",
@@ -62,7 +62,7 @@
       "origin": "Italy",
       "strength": "Medium",
       "price": "220",
-      "image": " https://source.unsplash.com/960x520/?coffee,affogato"
+      "image": "https://source.unsplash.com/960x520/?coffee,affogato"
     },
     {
       "name": "Turkish Coffee",
@@ -70,7 +70,7 @@
       "origin": "Turkey",
       "strength": "Strong",
       "price": "180",
-      "image": " https://source.unsplash.com/960x520/?coffee,turkish coffee"
+      "image": "https://source.unsplash.com/960x520/?coffee,turkish-coffee"
     },
     {
       "name": "Irish Coffee",
@@ -78,7 +78,7 @@
       "origin": "Ireland",
       "strength": "Medium",
       "price": "250",
-      "image": " https://source.unsplash.com/960x520/?coffee,irish coffee"
+      "image": "https://source.unsplash.com/960x520/?coffee,irish-coffee"
     },
     {
       "name": "Frappuccino",
@@ -86,7 +86,7 @@
       "origin": "United States",
       "strength": "Medium",
       "price": "200",
-      "image": " https://source.unsplash.com/960x520/?coffee,frappuccino"
+      "image": "https://source.unsplash.com/960x520/?coffee,frappuccino"
     },
     {
       "name": "Lungo",
@@ -94,7 +94,7 @@
       "origin": "Italy",
       "strength": "Medium",
       "price": "160",
-      "image": " https://source.unsplash.com/960x520/?coffee,lungo"
+      "image": "https://source.unsplash.com/960x520/?coffee,lungo"
     },
     {
       "name": "Ristretto",
@@ -102,7 +102,7 @@
       "origin": "Italy",
       "strength": "Strong",
       "price": "170",
-      "image": " https://source.unsplash.com/960x520/?coffee,ristretto"
+      "image": "https://source.unsplash.com/960x520/?coffee,ristretto"
     },
     {
       "name": "Vienna Coffee",
@@ -110,7 +110,7 @@
       "origin": "Austria",
       "strength": "Medium",
       "price": "210",
-      "image": " https://source.unsplash.com/960x520/?coffee,vienna coffee"
+      "image": "https://source.unsplash.com/960x520/?coffee,vienna-coffee"
     },
     {
       "name": "Cortado",
@@ -118,7 +118,7 @@
       "origin": "Spain",
       "strength": "Medium",
       "price": "180",
-      "image": " https://source.unsplash.com/960x520/?coffee,cortado"
+      "image": "https://source.unsplash.com/960x520/?coffee,cortado"
     },
     {
       "name": "Long Black",
@@ -126,7 +126,7 @@
       "origin": "Australia/New Zealand",
       "strength": "Medium",
       "price": "190",
-      "image": " https://source.unsplash.com/960x520/?coffee,long black Coffee"
+      "image": "https://source.unsplash.com/960x520/?coffee,long-black-Coffee"
     },
     {
       "name": "Piccolo Latte",
@@ -134,7 +134,7 @@
       "origin": "Australia",
       "strength": "Medium",
       "price": "200",
-      "image": " https://source.unsplash.com/960x520/?coffee,piccolo latte"
+      "image": "https://source.unsplash.com/960x520/?coffee,piccolo-latte"
     },
     {
       "name": "Pour Over",
@@ -142,7 +142,7 @@
       "origin": "Unknown",
       "strength": "Medium",
       "price": "180",
-      "image": " https://source.unsplash.com/960x520/?coffee,pour over"
+      "image": "https://source.unsplash.com/960x520/?coffee,pour-over"
     },
     {
       "name": "French Press",
@@ -150,7 +150,7 @@
       "origin": "France",
       "strength": "Medium",
       "price": "190",
-      "image": " https://source.unsplash.com/960x520/?coffee,french press"
+      "image": "https://source.unsplash.com/960x520/?coffee,french-press"
     },
     {
       "name": "Aeropress",
@@ -158,7 +158,7 @@
       "origin": "United States",
       "strength": "Medium",
       "price": "170",
-      "image": " https://source.unsplash.com/960x520/?coffee,aeropress"
+      "image": "https://source.unsplash.com/960x520/?coffee,aeropress"
     },
     {
       "name": "Chemex",
@@ -166,7 +166,7 @@
       "origin": "United States",
       "strength": "Medium",
       "price": "200",
-      "image": " https://source.unsplash.com/960x520/?coffee,chemex"
+      "image": "https://source.unsplash.com/960x520/?coffee,chemex"
     },
     {
       "name": "Ethiopian Yirgacheffe",
@@ -174,7 +174,7 @@
       "origin": "Ethiopia",
       "strength": "Medium",
       "price": "250",
-      "image": " https://source.unsplash.com/960x520/?coffee,ethiopian yirgacheffe"
+      "image": "https://source.unsplash.com/960x520/?coffee,ethiopian-yirgacheffe"
     },
     {
       "name": "Colombian Supremo",
@@ -182,7 +182,7 @@
       "origin": "Colombia",
       "strength": "Medium",
       "price": "230",
-      "image": " https://source.unsplash.com/960x520/?coffee,colombian supremo"
+      "image": "https://source.unsplash.com/960x520/?coffee,colombian-supremo"
     },
     {
       "name": "Brazilian Santos",
@@ -190,7 +190,7 @@
       "origin": "Brazil",
       "strength": "Medium",
       "price": "220",
-      "image": " https://source.unsplash.com/960x520/?coffee,brazilian santos"
+      "image": "https://source.unsplash.com/960x520/?coffee,brazilian-santos"
     },
     {
       "name": "Jamaican Blue Mountain",
@@ -198,7 +198,7 @@
       "origin": "Jamaica",
       "strength": "Medium",
       "price": "350",
-      "image": " https://source.unsplash.com/960x520/?coffee,jamaican blue mountain"
+      "image": "https://source.unsplash.com/960x520/?coffee,jamaican blue mountain"
     },
     {
       "name": "Costa Rican Tarrazu",
@@ -206,7 +206,7 @@
       "origin": "Costa Rica",
       "strength": "Medium",
       "price": "240",
-      "image": " https://source.unsplash.com/960x520/?coffee,costa rican tarrazu"
+      "image": "https://source.unsplash.com/960x520/?coffee,costa-rican-tarrazu"
     },
     {
       "name": "Guatemalan Antigua",
@@ -214,7 +214,7 @@
       "origin": "Guatemala",
       "strength": "Medium",
       "price": "260",
-      "image": " https://source.unsplash.com/960x520/?coffee,guatemalan antigua"
+      "image": "https://source.unsplash.com/960x520/?coffee,guatemalan-antigua"
     },
     {
       "name": "Mexican Chiapas",
@@ -222,7 +222,7 @@
       "origin": "Mexico",
       "strength": "Medium",
       "price": "220",
-      "image": " https://source.unsplash.com/960x520/?coffee,mexican chiapas"
+      "image": "https://source.unsplash.com/960x520/?coffee,mexican-chiapas"
     },
     {
       "name": "Tanzanian Peaberry",
@@ -230,7 +230,7 @@
       "origin": "Tanzania",
       "strength": "Medium",
       "price": "280",
-      "image": " https://source.unsplash.com/960x520/?coffee,tanzanian peaberry"
+      "image": "https://source.unsplash.com/960x520/?coffee,tanzanian-peaberry"
     },
     {
       "name": "Vietnamese Iced Coffee",
@@ -238,7 +238,7 @@
       "origin": "Vietnam",
       "strength": "Strong",
       "price": "190",
-      "image": " https://source.unsplash.com/960x520/?coffee,vietnamese iced coffee"
+      "image": "https://source.unsplash.com/960x520/?coffee,vietnamese-iced-coffee"
     },
     {
       "name": "Turkish Coffee",
@@ -246,7 +246,7 @@
       "origin": "Turkey",
       "strength": "Strong",
       "price": "180",
-      "image": " https://source.unsplash.com/960x520/?coffee,turkish coffee"
+      "image": "https://source.unsplash.com/960x520/?coffee,turkish-coffee"
     }
   ],
   "Teadata": [
@@ -256,7 +256,7 @@
       "origin": "Various",
       "strength": "Strong",
       "price": " 150",
-      "image": "https://source.unsplash.com/960x520/?Tea,black tea"
+      "image": "https://source.unsplash.com/960x520/?black-tea"
     },
     {
       "name": "Green Tea",
@@ -264,7 +264,7 @@
       "origin": "Various",
       "strength": "Medium",
       "price": " 120",
-      "image": "https://source.unsplash.com/960x520/?Tea,green tea"
+      "image": "https://source.unsplash.com/960x520/?Tea,green-tea"
     },
     {
       "name": "White Tea",
@@ -272,7 +272,7 @@
       "origin": "Various",
       "strength": "Light",
       "price": " 180",
-      "image": "https://source.unsplash.com/960x520/?Tea,white tea"
+      "image": "https://source.unsplash.com/960x520/?Tea,white-tea"
     },
     {
       "name": "Oolong Tea",
@@ -280,7 +280,7 @@
       "origin": "Various",
       "strength": "Medium",
       "price": " 200",
-      "image": "https://source.unsplash.com/960x520/?Tea,oolong tea"
+      "image": "https://source.unsplash.com/960x520/?Tea,oolong-tea"
     },
     {
       "name": "Herbal Tea",
@@ -288,15 +288,15 @@
       "origin": "Various",
       "strength": "Varies",
       "price": " 130",
-      "image": "https://source.unsplash.com/960x520/?Tea,herbal tea"
+      "image": "https://source.unsplash.com/960x520/?Tea,herbal-tea"
     },
     {
-      "name": "Chai Tea",
+      "name": "Chai",
       "description": "A spiced tea blend with black tea, milk, and a combination of spices.",
       "origin": "Various",
       "strength": "Strong",
       "price": " 160",
-      "image": "https://source.unsplash.com/960x520/?Tea,chai tea"
+      "image": "https://source.unsplash.com/960x520/?Tea,chai"
     },
     {
       "name": "Earl Grey Tea",
@@ -304,7 +304,7 @@
       "origin": "Various",
       "strength": "Medium",
       "price": " 140",
-      "image": "https://source.unsplash.com/960x520/?Tea,earl grey tea"
+      "image": "https://source.unsplash.com/960x520/?Tea,earl-grey-tea"
     },
     {
       "name": "Jasmine Tea",
@@ -312,7 +312,7 @@
       "origin": "Various",
       "strength": "Light",
       "price": " 150",
-      "image": "https://source.unsplash.com/960x520/?Tea,jasmine tea"
+      "image": "https://source.unsplash.com/960x520/?Tea,jasmine-tea"
     },
     {
       "name": "Matcha Tea",
@@ -320,7 +320,7 @@
       "origin": "Japan",
       "strength": "Medium",
       "price": " 250",
-      "image": "https://source.unsplash.com/960x520/?Tea,matcha tea"
+      "image": "https://source.unsplash.com/960x520/?Tea,matcha-tea"
     },
     {
       "name": "Rooibos Tea",
@@ -328,7 +328,7 @@
       "origin": "South Africa",
       "strength": "Medium",
       "price": " 170",
-      "image": "https://source.unsplash.com/960x520/?Tea,rooibos tea"
+      "image": "https://source.unsplash.com/960x520/?Tea,rooibos-tea"
     },
     {
       "name": "Darjeeling Tea",
@@ -336,7 +336,7 @@
       "origin": "India",
       "strength": "Medium",
       "price": " 190",
-      "image": "https://source.unsplash.com/960x520/?Tea,darjeeling tea"
+      "image": "https://source.unsplash.com/960x520/?Tea,darjeeling-tea"
     },
     {
       "name": "Assam Tea",
@@ -344,7 +344,7 @@
       "origin": "India",
       "strength": "Strong",
       "price": " 160",
-      "image": "https://source.unsplash.com/960x520/?Tea,assam tea"
+      "image": "https://source.unsplash.com/960x520/?Tea,assam-tea"
     },
     {
       "name": "Pu-erh Tea",
@@ -352,7 +352,7 @@
       "origin": "China",
       "strength": "Strong",
       "price": " 220",
-      "image": "https://source.unsplash.com/960x520/?Tea,pu erh tea"
+      "image": "https://source.unsplash.com/960x520/?Tea,pu-erh-tea"
     },
     {
       "name": "Sencha Tea",
@@ -360,7 +360,7 @@
       "origin": "Japan",
       "strength": "Light",
       "price": " 180",
-      "image": "https://source.unsplash.com/960x520/?Tea,sencha tea"
+      "image": "https://source.unsplash.com/960x520/?Tea,sencha-tea"
     },
     {
       "name": "Gunpowder Tea",
@@ -368,7 +368,7 @@
       "origin": "China",
       "strength": "Medium",
       "price": " 170",
-      "image": "https://source.unsplash.com/960x520/?Tea,gunpowder tea"
+      "image": "https://source.unsplash.com/960x520/?Tea,gunpowder-tea"
     },
     {
       "name": "Genmaicha",
@@ -376,7 +376,7 @@
       "origin": "Japan",
       "strength": "Medium",
       "price": " 200",
-      "image": "https://source.unsplash.com/960x520/?Tea,genmaicha tea"
+      "image": "https://source.unsplash.com/960x520/?Tea,genmaicha-tea"
     },
     {
       "name": "Chamomile Tea",
@@ -384,7 +384,7 @@
       "origin": "Various",
       "strength": "Light",
       "price": " 140",
-      "image": "https://source.unsplash.com/960x520/?Tea,chamomile tea"
+      "image": "https://source.unsplash.com/960x520/?Tea,chamomile-tea"
     },
     {
       "name": "Peppermint Tea",
@@ -392,7 +392,7 @@
       "origin": "Various",
       "strength": "Light",
       "price": " 130",
-      "image": "https://source.unsplash.com/960x520/?Tea,peppermint tea"
+      "image": "https://source.unsplash.com/960x520/?Tea,peppermint-tea"
     },
     {
       "name": "Hibiscus Tea",
@@ -400,7 +400,7 @@
       "origin": "Various",
       "strength": "Medium",
       "price": " 150",
-      "image": "https://source.unsplash.com/960x520/?Tea,hibiscus tea"
+      "image": "https://source.unsplash.com/960x520/?Tea,hibiscus-tea"
     },
     {
       "name": "Lemon Ginger Tea",
@@ -408,7 +408,7 @@
       "origin": "Various",
       "strength": "Medium",
       "price": " 160",
-      "image": "https://source.unsplash.com/960x520/?Tea,lemon ginger tea"
+      "image": "https://source.unsplash.com/960x520/?Tea,lemon-ginger-tea"
     },
     {
       "name": "White Peony Tea",
@@ -416,7 +416,7 @@
       "origin": "Various",
       "strength": "Light",
       "price": " 190",
-      "image": "https://source.unsplash.com/960x520/?Tea,white peony tea"
+      "image": "https://source.unsplash.com/960x520/?Tea,white-peony-tea"
     },
     {
       "name": "Earl Grey Green Tea",
@@ -424,7 +424,7 @@
       "origin": "Various",
       "strength": "Medium",
       "price": " 170",
-      "image": "https://source.unsplash.com/960x520/?Tea,earl grey green tea"
+      "image": "https://source.unsplash.com/960x520/?Tea,earl-grey-green-tea"
     },
     {
       "name": "Yerba Mate",
@@ -432,7 +432,7 @@
       "origin": "South America",
       "strength": "Strong",
       "price": " 210",
-      "image": "https://source.unsplash.com/960x520/?Tea,yerba mate"
+      "image": "https://source.unsplash.com/960x520/?Tea,yerba-mate"
     },
     {
       "name": "Mint Tea",
@@ -440,7 +440,7 @@
       "origin": "Various",
       "strength": "Light",
       "price": " 140",
-      "image": "https://source.unsplash.com/960x520/?Tea,mint tea"
+      "image": "https://source.unsplash.com/960x520/?Tea,mint-tea"
     },
     {
       "name": "Rooibos Chai",
@@ -448,7 +448,7 @@
       "origin": "Various",
       "strength": "Medium",
       "price": " 180",
-      "image": "https://source.unsplash.com/960x520/?Tea,rooibos chai"
+      "image": "https://source.unsplash.com/960x520/?Tea,rooibos-chai"
     },
     {
       "name": "Lemon Verbena Tea",
@@ -456,7 +456,7 @@
       "origin": "Various",
       "strength": "Light",
       "price": " 160",
-      "image": "https://source.unsplash.com/960x520/?Tea,lemon verbena tea"
+      "image": "https://source.unsplash.com/960x520/?Tea,lemon-verbena-tea"
     },
     {
       "name": "White Silver Needle Tea",
@@ -464,7 +464,7 @@
       "origin": "Various",
       "strength": "Light",
       "price": " 250",
-      "image": "https://source.unsplash.com/960x520/?Tea,white silver needle tea"
+      "image": "https://source.unsplash.com/960x520/?Tea,white-silver-needle-tea"
     },
     {
       "name": "Jasmine Dragon Pearl Tea",
@@ -472,7 +472,7 @@
       "origin": "Various",
       "strength": "Light",
       "price": " 230",
-      "image": "https://source.unsplash.com/960x520/?Tea,jasmine dragon pearl tea"
+      "image": "https://source.unsplash.com/960x520/?Tea,jasmine-dragon-pearl-tea"
     },
     {
       "name": "Darjeeling First Flush Tea",
@@ -480,7 +480,7 @@
       "origin": "India",
       "strength": "Light",
       "price": " 240",
-      "image": "https://source.unsplash.com/960x520/?Tea,darjeeling first flush tea"
+      "image": "https://source.unsplash.com/960x520/?Tea,darjeeling-first-flush-tea"
     },
     {
       "name": "Ceylon Tea",
@@ -488,7 +488,7 @@
       "origin": "Sri Lanka",
       "strength": "Varies",
       "price": " 220",
-      "image": "https://source.unsplash.com/960x520/?Tea,ceylon tea"
+      "image": "https://source.unsplash.com/960x520/?Tea,ceylon-tea"
     }
   ]
 }

@@ -4,10 +4,11 @@ import { Acontext } from "../App";
 import { BsPersonFill, BsCartFill, BsGearFill, BsBoxArrowRight } from 'react-icons/bs';
 
 
+
 import profileIcon from '../Images/account_thin.svg'; 
 
 const Navbar = () => {
-  const {isLogin,setisLogin}=useContext(Acontext)
+  const {isLogin,setisLogin, user}=useContext(Acontext)
   const { search, setSearch } = useContext(Acontext);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -67,13 +68,13 @@ const Navbar = () => {
               <button
                 className="btn btn-link nav-link"
                 onClick={toggleDropdown}
-              >
+              >{isLogin && <> <strong >{user.name} </strong> </>}
                 <img src={profileIcon} alt="Profile" className="profile-icon" /> 
               </button>
               {isDropdownOpen && (
                 <ul className="dropdown-menu dropdown-menu-start show">
                   <li>
-                    <Link className="dropdown-item" to="/" onClick={toggleDropdown}>
+                    <Link className="dropdown-item" to="/profile" onClick={toggleDropdown}>
                       <BsPersonFill className="me-2" /> Profile
                     </Link>
                   </li>
