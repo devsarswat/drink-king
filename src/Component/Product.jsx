@@ -3,6 +3,7 @@ import { Card, CardContent, CardMedia, Typography } from '@mui/material';
 import cdata from '../Data/CoffeeData.json';
 import { Acontext } from '../App';
 import { useNavigate } from 'react-router-dom';
+import Footer from './Footer';
 
 const  Product = () => {
   const navigate = useNavigate();
@@ -23,6 +24,7 @@ const  Product = () => {
 
   return (
     <>
+    <div className='product-div'>
       <div className="card-container">
         <Card className="card" onClick={handleCoffee}>
           <CardMedia
@@ -57,6 +59,8 @@ const  Product = () => {
           </CardContent>
         </Card>
       </div>
+      </div>
+      <Footer/>
     </>
   );
 };

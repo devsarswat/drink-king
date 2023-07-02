@@ -28,8 +28,8 @@ const App=()=> {
     <Acontext.Provider value={{ search, setSearch,data,setdata,cartItems, setCartItems,isLogin,setisLogin,user,setuser}}>
       <Navbar  />
       <Routes>
-        <Route path="/" element={<GetData />} />
-        <Route path="/product" element={<Product />} />
+        <Route path="/alldata" element={<GetData />} />
+        <Route path="/" element={<Product />} />
         <Route path="/data" element={<Data />} />
         <Route path="/profile" element={<PrivateRoute element={<Profile/>}/>} />
         <Route path="/cart" element={<PrivateRoute element={<Cart/>}/>} />
