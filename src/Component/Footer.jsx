@@ -62,6 +62,4 @@ const Footer = () => {
 };
 
 export default Footer;
-<Typography variant="body2" className="text">
-  Column 3 text
-</Typography>;
+

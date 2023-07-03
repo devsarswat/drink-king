@@ -7,7 +7,7 @@
  
 }
 .product-div{
-  height: 58.8vh;
+  height: 56.6vh;
 }
 
 .card {
@@ -356,13 +356,15 @@
 }
 @media screen and (max-width: 807px) {
   .footer{
-    margin-top: 45%;
+    margin-top: 50%;
     flex-direction: row;
+    padding: 1rem;
     
   }
   .column-1{
     padding-top: 10px !important;
     flex-direction: row;
+    margin-left: 0%;
     
   }
   .column-2{
@@ -372,10 +374,13 @@
   }
   .s-icon{
     margin-top: 0;
+    margin-left: -4rem;
   }
-  /* .cl-1{
-    flex-direction: column;
-  } */
+  .text{
+    padding-left: 0rem !important;
+    margin-left: -80px !important;
+  }
+  
   
 }
 
