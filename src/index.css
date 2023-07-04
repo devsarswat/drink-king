@@ -383,4 +383,12 @@
   
   
 }
+@media screen and (max-height: 563px) {
+  .footer{
+    margin-top: 70%;
+    flex-direction: row;
+    padding: 1rem;
+    
+  }
+}
 
