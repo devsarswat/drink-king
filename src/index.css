@@ -383,9 +383,10 @@
   
   
 }
-@media screen and (max-height: 563px) {
+@media screen and (max-height: 564px) and (max-width: 528px){
+ 
   .footer{
-    margin-top: 70%;
+    margin-top: 55%;
     flex-direction: row;
     padding: 1rem;
     
