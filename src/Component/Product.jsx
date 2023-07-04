@@ -1,25 +1,39 @@
 import React, { useContext } from 'react';
 import { Card, CardContent, CardMedia, Typography } from '@mui/material';
-import cdata from '../Data/CoffeeData.json';
+// import cdata from '../Data/CoffeeData.json';
 import { Acontext } from '../App';
 import { useNavigate } from 'react-router-dom';
 import Footer from './Footer';
+import axios from 'axios';
 
 const  Product = () => {
   const navigate = useNavigate();
   const { setdata } = useContext(Acontext);
   
 
+
   const handleCoffee = () => {
-    setdata(cdata.varieties);
+    axios.get('http://localhost:4000/data')
+    .then((res)=>{console.log(res.data)
+    setdata(res.data.varieties)
     navigate('/data');
-    console.log(cdata.varieties)
+    })
+    .catch((error)=>console.log(error))
+    // setdata(cdata.varieties);
+    // navigate('/data');
+    // console.log(cdata.varieties)
   };
 
   const handleTea = () => {
-    setdata(cdata.Teadata);
+    axios.get('http://localhost:4000/data')
+    .then((res)=>{console.log(res.data)
+    setdata(res.data.Teadata)
     navigate('/data');
-    console.log(cdata.Teadata)
+    })
+    .catch((error)=>console.log(error))
+    // setdata(cdata.Teadata);
+    // navigate('/data');
+    // console.log(cdata.Teadata)
   };
 
   return (

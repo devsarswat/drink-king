@@ -1,18 +1,43 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Acontext } from '../App';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
+import axios from 'axios';
 
 const Cart = () => {
   const { cartItems, setCartItems } = useContext(Acontext);
 
-  const handleRemoveItem = (itemIndex) => {
-    const updatedCartItems = cartItems.filter((_, index) => index !== itemIndex);
-    setCartItems(updatedCartItems);
+   useEffect(()=>{
+    axios
+    .get('http://localhost:4000/cart')
+    .then((res)=>{
+      console.log(res)
+      setCartItems(res.data)
+    })
+    .catch((error)=>{
+      console.log(error);
+    })
+  },[setCartItems])
+
+
+
+  const handleRemoveItem = (itemId) => {
+    const updatedCartItems = cartItems.filter((item) => item.id !== itemId);
+  
+    axios
+      .delete(`http://localhost:4000/cart/${itemId}`)
+      .then((res) => {
+        console.log(res);
+        setCartItems(updatedCartItems);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
+
 
   const calculateTotalPrice = () => {
     let totalPrice = 0;
@@ -56,7 +81,7 @@ const Cart = () => {
             variant="outlined"
             color="primary"
             className="add-to-cart-button"
-            onClick={() => handleRemoveItem(index)}
+            onClick={() => handleRemoveItem(item.id)}
           >
             Remove
           </Button>

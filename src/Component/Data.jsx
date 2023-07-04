@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { Card, CardContent, CardMedia, Typography, Button } from '@mui/material';
 import { Acontext } from '../App';
+import axios from 'axios';
 
 const ITEMS_PER_PAGE = 6;
 
@@ -35,7 +36,15 @@ const Data = () => {
     setSortType(prevSortType => (prevSortType === type ? null : type));
   };
 
-  const handleAddToCart = variety => {
+  const handleAddToCart = (variety) => {
+    axios
+    .post('http://localhost:4000/cart',variety)
+    .then((res)=>{
+      console.log(res)
+    })
+    .catch((error)=>{
+      console.log(error);
+    })
     setCartItems(prevCartItems => [...prevCartItems, variety]);
   };
 

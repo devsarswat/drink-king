@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { Card, CardContent, CardMedia, Typography, Button } from '@mui/material';
 import { Acontext } from '../App';
+import axios from 'axios';
 
 const ITEMS_PER_PAGE = 6;
 
@@ -9,8 +10,15 @@ const GetData = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [filteredVarieties, setFilteredVarieties] = useState([]);
   const [sortType, setSortType] = useState(null);
-  const { data } = useContext(Acontext);
- 
+ const[data,setdata]=useState([]);
+ useEffect(()=>{
+  axios
+  .get('http://localhost:4000/data')
+  .then((res)=>{
+    console.log((res.data.Teadata),(res.data.varieties))
+    setdata([...(res.data.Teadata),...(res.data.varieties)]);
+  })
+ },[setdata])
 
   useEffect(() => {
     const searchQuery = search ? search.toString().toLowerCase() : '';
@@ -36,6 +44,14 @@ const GetData = () => {
   };
 
   const handleAddToCart = (variety) => {
+    axios
+    .post('http://localhost:4000/cart',variety)
+    .then((res)=>{
+      console.log(res)
+    })
+    .catch((error)=>{
+      console.log(error);
+    })
     setCartItems(prevCartItems => [...prevCartItems, variety]);
   };
 
