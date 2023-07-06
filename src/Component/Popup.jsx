@@ -6,7 +6,7 @@ const Popup = ({ variety, onClose }) => {
   return (
     <Dialog open={!!variety} onClose={onClose} maxWidth="md"classes={{ paper: 'popup-paper' }}>
     <CardMedia component="img" image={variety?.image} alt={variety?.name} className="popup-image" />
-      <DialogContent className='popup-box'>
+      <DialogContent className='popup-box' style={{ width: '500px', height: '300px' }}>
       <Typography variant="h6" className='popup-heading'>{variety?.name}</Typography>
         <Typography variant="body2" className='popup-text'>{variety?.description}</Typography>
         <Typography variant="body2" className='popup-text'><span>Origin:</span> {variety?.origin}</Typography>
