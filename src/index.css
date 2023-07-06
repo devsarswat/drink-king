@@ -334,16 +334,19 @@
 /* popup box css */
 .popup-paper {
   border-radius: 1rem !important;
+  max-width: 500px !important;
+  
 }
 .popup-image {
-  width: 100%;
+  width: 100% ;
   height: 300px;
   object-fit: cover;
+  overflow-y: hidden !important;
 }
 .popup-box{
   display: flex;
   flex-direction: column; 
-  scroll-snap-type-y: none !important; 
+  overflow-y: hidden !important; 
 }
 .popup-heading{
   margin-bottom: 10px !important;
@@ -360,6 +363,7 @@
   font-weight: bold ;
   margin-right: 0.5rem;
 }
+
 
 
 @media screen and (max-width: 600px) {
