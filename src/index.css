@@ -4,8 +4,11 @@
   justify-content: center;
   flex-direction: row;
   /* height: 62.7vh; */
-  
  
+}
+.card:hover {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease-in-out;
 }
 .product-div{
   height: 56.6vh;

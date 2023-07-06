@@ -112,16 +112,6 @@
     },
     {
       "userid": 2,
-      "name": "Green Tea",
-      "description": "A lightly oxidized tea with a delicate and grassy flavor.",
-      "origin": "Various",
-      "strength": "Medium",
-      "price": " 120",
-      "image": "https://images.unsplash.com/photo-1547825407-2d060104b7f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0Njc1NzN8MHwxfHNlYXJjaHwxfHxHcmVlblRlYSUyMHRlYXxlbnwwfHx8fDE2ODgxMzE3OTd8MA&ixlib=rb-4.0.3&q=80&w=400",
-      "id": 15
-    },
-    {
-      "userid": 2,
       "name": "White Tea",
       "description": "A minimally processed tea with a subtle and delicate flavor.",
       "origin": "Various",
