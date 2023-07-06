@@ -37,7 +37,7 @@ const Data = () => {
   };
 
   const handleAddToCart = (variety) => {
-    const usercart={...variety,userid:user.id}
+    const usercart={userid:user.id,...variety}
     axios
     .post('http://localhost:4000/cart',usercart)
     .then((res)=>{

@@ -11,6 +11,7 @@ const Cart = () => {
   const { cartItems, setCartItems, user } = useContext(Acontext);
   const [totalPrice, setTotalPrice] = useState(0);
   const [itemCount, setItemCount] = useState(0);
+  const [filteredItems, setFilteredItems] = useState([]);
 
   useEffect(() => {
     axios
@@ -26,6 +27,8 @@ const Cart = () => {
 
   useEffect(() => {
     const filteredItems = cartItems.filter((item) => item.userid === user.id);
+    setFilteredItems(filteredItems);
+
     let calculatedTotalPrice = 0;
     filteredItems.forEach((item) => {
       const itemPrice = parseFloat(item.price);
@@ -51,51 +54,46 @@ const Cart = () => {
 
   const renderCartItems = () => {
     const uniqueItems = {};
-    cartItems.forEach((item) => {
+    filteredItems.forEach((item) => {
       if (!uniqueItems[item.name]) {
         uniqueItems[item.name] = { ...item, quantity: 1 };
       } else {
         uniqueItems[item.name].quantity += 1;
       }
     });
-
-    return Object.values(uniqueItems).map((item, index) => {
-      if (user.id === item.userid) {
-        return (
-          <Card key={index} className="card">
-            <CardMedia component="img" height="140" image={item.image} alt={item.name} />
-            <CardContent>
-              <Typography variant="h5" component="div">
-                {item.name}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                {item.description}
-              </Typography>
-              <Typography variant="body2" color="text.secondary" className="my-2">
-                Price: {item.price}
-              </Typography>
-              <Typography variant="body2" color="text.secondary" className="my-2">
-                Quantity: {item.quantity}
-              </Typography>
-              <Button variant="contained" color="primary" className="buy-now-button my-2 mx-2">
-                Buy Now
-              </Button>
-              <Button
-                variant="outlined"
-                color="primary"
-                className="add-to-cart-button"
-                onClick={() => handleRemoveItem(item.id)}
-              >
-                Remove
-              </Button>
-            </CardContent>
-          </Card>
-        );
-      } else {
-        return null;
-      }
-    });
+  
+    return Object.values(uniqueItems).map((item, index) => (
+      <Card key={index} className="card">
+        <CardMedia component="img" height="140" image={item.image} alt={item.name} />
+        <CardContent>
+          <Typography variant="h5" component="div">
+            {item.name}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {item.description}
+          </Typography>
+          <Typography variant="body2" color="text.secondary" className="my-2">
+            Price: {item.price}
+          </Typography>
+          <Typography variant="body2" color="text.secondary" className="my-2">
+            Quantity: {item.quantity}
+          </Typography>
+          <Button variant="contained" color="primary" className="buy-now-button my-2 mx-2">
+            Buy Now
+          </Button>
+          <Button
+            variant="outlined"
+            color="primary"
+            className="add-to-cart-button"
+            onClick={() => handleRemoveItem(item.id)}
+          >
+            Remove
+          </Button>
+        </CardContent>
+      </Card>
+    ));
   };
+  
 
   return (
     <div className="page-container">
@@ -107,7 +105,7 @@ const Cart = () => {
             </Typography>
             {cartItems.length === 0 ? (
               <Typography variant="body2" color="text.secondary">
-                Your cart is empty.
+                Your cartis empty.
               </Typography>
             ) : (
               <div className="card-content">{renderCartItems()}</div>
