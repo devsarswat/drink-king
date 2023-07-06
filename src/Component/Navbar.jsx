@@ -45,12 +45,12 @@ const Navbar = () => {
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           <li className="nav-item mx-2">
               <NavLink className="nav-link" aria-current="page" to="/">
-                Product
+                Home
               </NavLink>
             </li>
           <li className="nav-item mx-2">
               <NavLink className="nav-link" aria-current="page" to="/alldata">
-                All Product
+                Order
               </NavLink>
             </li>
           </ul>

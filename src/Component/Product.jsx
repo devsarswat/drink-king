@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { Card, CardContent, CardMedia, Typography } from '@mui/material';
-// import cdata from '../Data/CoffeeData.json';
 import { Acontext } from '../App';
 import { useNavigate } from 'react-router-dom';
 import Footer from './Footer';
@@ -19,9 +18,6 @@ const  Product = () => {
     navigate('/data');
     })
     .catch((error)=>console.log(error))
-    // setdata(cdata.varieties);
-    // navigate('/data');
-    // console.log(cdata.varieties)
   };
 
   const handleTea = () => {
@@ -31,9 +27,6 @@ const  Product = () => {
     navigate('/data');
     })
     .catch((error)=>console.log(error))
-    // setdata(cdata.Teadata);
-    // navigate('/data');
-    // console.log(cdata.Teadata)
   };
 
   return (

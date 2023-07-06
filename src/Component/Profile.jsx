@@ -29,6 +29,7 @@ const Profile = () => {
         <div className="p-text">
           <>
             <Typography variant="h6">Name: {user.name}</Typography>
+            <Typography variant="body1">ID: {user.id}</Typography>
             <Typography variant="body1">Address: 123 Main St, City, Country</Typography>
             <Typography variant="body1">Zip Code: 12345</Typography>
             <Typography variant="body1">Email: {user.email}</Typography>

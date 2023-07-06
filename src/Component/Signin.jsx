@@ -29,7 +29,8 @@ const Signin = () => {
 
     if (Object.keys(validationErrors).length === 0) {
       axios
-        .post("http://192.168.0.173:4000/register", formData)
+        // .post("http://192.168.0.173:4000/register", formData)
+        .post("http://localhost:4000/Userdata", formData)
         .then((res) => {
           console.log(res.data);
           alert("Registration Successfully");

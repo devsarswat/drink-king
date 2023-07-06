@@ -6,7 +6,7 @@ import axios from 'axios';
 const ITEMS_PER_PAGE = 6;
 
 const Data = () => {
-  const { search, setCartItems } = useContext(Acontext);
+  const { search, setCartItems ,isLogin,user} = useContext(Acontext);
   const [currentPage, setCurrentPage] = useState(1);
   const [filteredVarieties, setFilteredVarieties] = useState([]);
   const [sortType, setSortType] = useState(null);
@@ -37,8 +37,9 @@ const Data = () => {
   };
 
   const handleAddToCart = (variety) => {
+    const usercart={...variety,userid:user.id}
     axios
-    .post('http://localhost:4000/cart',variety)
+    .post('http://localhost:4000/cart',usercart)
     .then((res)=>{
       console.log(res)
     })
@@ -112,6 +113,7 @@ const Data = () => {
                 variant="outlined"
                 color="primary"
                 className="add-to-cart-button"
+                disabled={!isLogin}
                 onClick={() => handleAddToCart(variety)}
               >
                 Add to Cart

@@ -7,7 +7,98 @@
       "strength": "Strong",
       "price": " 150",
       "image": "https://images.unsplash.com/photo-1617191880520-c6a69e04fa75?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0Njc1NzN8MHwxfHNlYXJjaHwxfHxCbGFjayUyMFRlYXxlbnwwfHx8fDE2ODgxMzE3MjJ8MA&ixlib=rb-4.0.3&q=80&w=400",
+      "userid": 1,
       "id": 1
+    },
+    {
+      "name": "Green Tea",
+      "description": "A lightly oxidized tea with a delicate and grassy flavor.",
+      "origin": "Various",
+      "strength": "Medium",
+      "price": " 120",
+      "image": "https://images.unsplash.com/photo-1547825407-2d060104b7f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0Njc1NzN8MHwxfHNlYXJjaHwxfHxHcmVlblRlYSUyMHRlYXxlbnwwfHx8fDE2ODgxMzE3OTd8MA&ixlib=rb-4.0.3&q=80&w=400",
+      "userid": 1,
+      "id": 2
+    },
+    {
+      "name": "Green Tea",
+      "description": "A lightly oxidized tea with a delicate and grassy flavor.",
+      "origin": "Various",
+      "strength": "Medium",
+      "price": " 120",
+      "image": "https://images.unsplash.com/photo-1547825407-2d060104b7f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0Njc1NzN8MHwxfHNlYXJjaHwxfHxHcmVlblRlYSUyMHRlYXxlbnwwfHx8fDE2ODgxMzE3OTd8MA&ixlib=rb-4.0.3&q=80&w=400",
+      "userid": 1,
+      "id": 3
+    },
+    {
+      "name": "Espresso",
+      "description": "A concentrated coffee beverage brewed by forcing hot water under high pressure through finely ground coffee.",
+      "origin": "Italy",
+      "strength": "Strong",
+      "price": "150",
+      "image": "https://images.unsplash.com/photo-1610889556528-9a770e32642f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0Njc1NzN8MHwxfHNlYXJjaHwxfHxFc3ByZXNzb3xlbnwwfHx8fDE2ODgxMjkxODh8MA&ixlib=rb-4.0.3&q=80&w=400",
+      "userid": 2,
+      "id": 4
+    },
+    {
+      "name": "Espresso",
+      "description": "A concentrated coffee beverage brewed by forcing hot water under high pressure through finely ground coffee.",
+      "origin": "Italy",
+      "strength": "Strong",
+      "price": "150",
+      "image": "https://images.unsplash.com/photo-1610889556528-9a770e32642f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0Njc1NzN8MHwxfHNlYXJjaHwxfHxFc3ByZXNzb3xlbnwwfHx8fDE2ODgxMjkxODh8MA&ixlib=rb-4.0.3&q=80&w=400",
+      "userid": 2,
+      "id": 5
+    },
+    {
+      "name": "Espresso",
+      "description": "A concentrated coffee beverage brewed by forcing hot water under high pressure through finely ground coffee.",
+      "origin": "Italy",
+      "strength": "Strong",
+      "price": "150",
+      "image": "https://images.unsplash.com/photo-1610889556528-9a770e32642f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0Njc1NzN8MHwxfHNlYXJjaHwxfHxFc3ByZXNzb3xlbnwwfHx8fDE2ODgxMjkxODh8MA&ixlib=rb-4.0.3&q=80&w=400",
+      "userid": 2,
+      "id": 6
+    },
+    {
+      "name": "Cappuccino",
+      "description": "A coffee-based drink made with espresso, hot milk, and steamed milk foam.",
+      "origin": "Italy",
+      "strength": "Medium",
+      "price": "180",
+      "image": "https://source.unsplash.com/960x520/?coffee,Cappuccino",
+      "userid": 2,
+      "id": 7
+    },
+    {
+      "name": "Latte",
+      "description": "A coffee drink made with espresso and steamed milk.",
+      "origin": "Italy",
+      "strength": "Medium",
+      "price": "170",
+      "image": "https://images.unsplash.com/photo-1541167760496-1628856ab772?ixid=M3w0Njc1NzN8MHwxfHNlYXJjaHwxfHxMYXR0ZXxlbnwwfHx8fDE2ODgxMjk2NDd8MA&ixlib=rb-4.0.3",
+      "userid": 2,
+      "id": 8
+    },
+    {
+      "name": "Mocha",
+      "description": "A coffee drink made with espresso, hot chocolate, and steamed milk.",
+      "origin": "Unknown",
+      "strength": "Medium",
+      "price": "190",
+      "image": "https://images.unsplash.com/photo-1596078841242-12f73dc697c6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0Njc1NzN8MHwxfHNlYXJjaHwxfHxNb2NoYXxlbnwwfHx8fDE2ODgxMzAwNDF8MA&ixlib=rb-4.0.3&q=80&w=400",
+      "userid": 2,
+      "id": 9
+    },
+    {
+      "name": "Chai",
+      "description": "A spiced tea blend with black tea, milk, and a combination of spices.",
+      "origin": "Various",
+      "strength": "Strong",
+      "price": " 160",
+      "image": "https://source.unsplash.com/960x520/?Tea,chai",
+      "userid": 2,
+      "id": 10
     }
   ],
   "data": {
@@ -503,5 +594,23 @@
         "image": "https://source.unsplash.com/960x520/?Tea,ceylon-tea"
       }
     ]
-  }
+  },
+  "Userdata": [
+    {
+      "name": "ajay",
+      "email": "ajaykumar@gmail.com",
+      "password": "123456",
+      "confirmpassword": "123456",
+      "role": "user",
+      "id": 1
+    },
+    {
+      "name": "vasudev",
+      "email": "vasudev@gmail.com",
+      "password": "123456",
+      "confirmpassword": "123456",
+      "role": "user",
+      "id": 2
+    }
+  ]
 }

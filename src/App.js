@@ -6,7 +6,6 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Login from "./Component/Login";
 import Signin from "./Component/Signin";
 import GetData from "./Component/GetData";
-// import coffee from './Data/CoffeeData.json'
 import Product from "./Component/Product";
 import Data from "./Component/Data";
 import Cart from "./Component/Cart";
@@ -21,7 +20,7 @@ const App = () => {
     return storedData ? JSON.parse(storedData) : [];
   });
   const [cartItems, setCartItems] = useState([]);
-  const [user, setuser] = useState();
+  const [user, setuser] = useState([]);
 
   useEffect(() => {
     localStorage.setItem("productData", JSON.stringify(data));
