@@ -2,16 +2,6 @@
   "cart": [
     {
       "userid": 1,
-      "name": "Cappuccino",
-      "description": "A coffee-based drink made with espresso, hot milk, and steamed milk foam.",
-      "origin": "Italy",
-      "strength": "Medium",
-      "price": "180",
-      "image": "https://source.unsplash.com/960x520/?coffee,Cappuccino",
-      "id": 2
-    },
-    {
-      "userid": 1,
       "name": "Espresso",
       "description": "A concentrated coffee beverage brewed by forcing hot water under high pressure through finely ground coffee.",
       "origin": "Italy",
@@ -119,16 +109,6 @@
       "price": "220",
       "image": "https://images.unsplash.com/photo-1638543284847-3a6bed3e1689?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0Njc1NzN8MHwxfHNlYXJjaHwxfHxBZmZvZ2F0b3xlbnwwfHx8fDE2ODgxMzAyNzd8MA&ixlib=rb-4.0.3&q=80&w=400",
       "id": 13
-    },
-    {
-      "userid": 2,
-      "name": "Black Tea",
-      "description": "A fully oxidized tea with a bold and robust flavor.",
-      "origin": "Various",
-      "strength": "Strong",
-      "price": " 150",
-      "image": "https://images.unsplash.com/photo-1617191880520-c6a69e04fa75?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0Njc1NzN8MHwxfHNlYXJjaHwxfHxCbGFjayUyMFRlYXxlbnwwfHx8fDE2ODgxMzE3MjJ8MA&ixlib=rb-4.0.3&q=80&w=400",
-      "id": 14
     },
     {
       "userid": 2,
@@ -499,6 +479,16 @@
       "price": "170",
       "image": "https://source.unsplash.com/960x520/?coffee,aeropress",
       "id": 51
+    },
+    {
+      "userid": 2,
+      "name": "Black Tea",
+      "description": "A fully oxidized tea with a bold and robust flavor.",
+      "origin": "Various",
+      "strength": "Strong",
+      "price": " 150",
+      "image": "https://images.unsplash.com/photo-1617191880520-c6a69e04fa75?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0Njc1NzN8MHwxfHNlYXJjaHwxfHxCbGFjayUyMFRlYXxlbnwwfHx8fDE2ODgxMzE3MjJ8MA&ixlib=rb-4.0.3&q=80&w=400",
+      "id": 52
     }
   ],
   "data": {

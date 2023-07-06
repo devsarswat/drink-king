@@ -331,8 +331,34 @@
 .Text-copy{
   margin-top: 10px !important;
 }
-
-
+/* popup box css */
+.popup-paper {
+  border-radius: 1rem !important;
+}
+.popup-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+.popup-box{
+  display: flex;
+  flex-direction: column;  
+}
+.popup-heading{
+  margin-bottom: 10px !important;
+  font-weight: bold !important;
+}
+.popup-text{
+  line-height: 2rem !important;
+}
+.popup-text-p{
+  font-weight: bold !important;
+  font-size: 15px !important;
+}
+.popup-text span {
+  font-weight: bold ;
+  margin-right: 0.5rem;
+}
 
 
 @media screen and (max-width: 600px) {

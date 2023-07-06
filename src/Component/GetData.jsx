@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import { Card, CardContent, CardMedia, Typography, Button } from '@mui/material';
 import { Acontext } from '../App';
 import axios from 'axios';
+import Popup from './Popup';
 
 const ITEMS_PER_PAGE = 6;
 
@@ -10,7 +11,9 @@ const GetData = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [filteredVarieties, setFilteredVarieties] = useState([]);
   const [sortType, setSortType] = useState(null);
- const[data,setdata]=useState([]);
+  const[data,setdata]=useState([]);
+  const[selectedcard,setselectedcard]=useState();
+
  useEffect(()=>{
   axios
   .get('http://localhost:4000/data')
@@ -62,6 +65,13 @@ const GetData = () => {
     startIndex + ITEMS_PER_PAGE
   );
 
+  const handleOpenPopup=(variety)=>{
+    setselectedcard(variety)
+  }
+  const handleClosePopup = () => {
+    setselectedcard(null);
+  };
+
   return (
     <div className="Sbar">
       <div className="d-flex justify-content-center">
@@ -95,10 +105,10 @@ const GetData = () => {
         </div>
       </div>
 
-      <div className="card-container">
+      <div className="card-container" >
         {displayedVarieties.map((variety, index) => (
-          <Card key={index} className="card">
-            <CardMedia component="img" height="140" image={variety.image} alt={variety.name} />
+          <Card key={index} className="card" >
+            <CardMedia component="img" height="140" image={variety.image} alt={variety.name} onClick={()=>handleOpenPopup(variety)}/>
             <CardContent>
               <Typography variant="h5" component="div">
                 {variety.name}
@@ -107,7 +117,7 @@ const GetData = () => {
                 {variety.description}
               </Typography>
               <Typography variant="body2" color="text.secondary" className="my-2">
-                Price: {variety.price}
+              <span style={{fontWeight :'bold',color:'black',fontSize:'15px'}}>₹ {variety.price}</span>
               </Typography>
               <Button
                 variant="contained"
@@ -145,7 +155,9 @@ const GetData = () => {
           )
         )}
       </div>
+      <Popup variety={selectedcard} onClose={handleClosePopup} />
     </div>
+    
   );
 };
 

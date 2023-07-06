@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import { Card, CardContent, CardMedia, Typography, Button } from '@mui/material';
 import { Acontext } from '../App';
 import axios from 'axios';
+import Popup from './Popup';
 
 const ITEMS_PER_PAGE = 6;
 
@@ -11,6 +12,7 @@ const Data = () => {
   const [filteredVarieties, setFilteredVarieties] = useState([]);
   const [sortType, setSortType] = useState(null);
   const { data } = useContext(Acontext);
+  const[selectedcard,setselectedcard]=useState();
  
 
   useEffect(() => {
@@ -54,6 +56,12 @@ const Data = () => {
     startIndex,
     startIndex + ITEMS_PER_PAGE
   );
+  const handleOpenPopup=(variety)=>{
+    setselectedcard(variety)
+  }
+  const handleClosePopup = () => {
+    setselectedcard(null);
+  };
 
   return (
     <div className="Sbar">
@@ -88,10 +96,10 @@ const Data = () => {
         </div>
       </div>
 
-      <div className="card-container">
+      <div className="card-container" >
         {displayedVarieties.map((variety, index) => (
-          <Card key={index} className="card">
-            <CardMedia component="img" height="140" image={variety.image} alt={variety.name} />
+          <Card key={index} className="card" >
+            <CardMedia component="img" height="140" image={variety.image} alt={variety.name} onClick={()=>handleOpenPopup(variety)}/>
             <CardContent>
               <Typography variant="h5" component="div">
                 {variety.name}
@@ -100,7 +108,7 @@ const Data = () => {
                 {variety.description}
               </Typography>
               <Typography variant="body2" color="text.secondary" className="my-2">
-                Price: {variety.price}
+              <span style={{fontWeight :'bold',color:'black',fontSize:'15px'}}>₹ {variety.price}</span>
               </Typography>
               <Button
                 variant="contained"
@@ -138,7 +146,9 @@ const Data = () => {
           )
         )}
       </div>
+      <Popup variety={selectedcard} onClose={handleClosePopup} />
     </div>
+    
   );
 };
 
