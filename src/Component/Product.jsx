@@ -4,6 +4,7 @@ import { Acontext } from '../App';
 import { useNavigate } from 'react-router-dom';
 import Footer from './Footer';
 import axios from 'axios';
+import Config from '../Config';
 
 const  Product = () => {
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ const  Product = () => {
 
 
   const handleCoffee = () => {
-    axios.get('http://localhost:4000/data')
+    axios.get(Config.apikeydata)
     .then((res)=>{console.log(res.data)
     setdata(res.data.varieties)
     navigate('/data');
@@ -21,7 +22,7 @@ const  Product = () => {
   };
 
   const handleTea = () => {
-    axios.get('http://localhost:4000/data')
+    axios.get(Config.apikeydata)
     .then((res)=>{console.log(res.data)
     setdata(res.data.Teadata)
     navigate('/data');

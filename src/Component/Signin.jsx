@@ -3,6 +3,7 @@ import axios from "axios";
 import { TextField, Button, Typography} from "@mui/material";
 import validator from "validator";
 import { useNavigate } from "react-router-dom";
+import Config from "../Config";
 
 const Signin = () => {
   const navigate = useNavigate();
@@ -30,7 +31,7 @@ const Signin = () => {
     if (Object.keys(validationErrors).length === 0) {
       axios
         // .post("http://192.168.0.173:4000/register", formData)
-        .post("http://localhost:4000/Userdata", formData)
+        .post(Config.apikeyuserdata, formData)
         .then((res) => {
           console.log(res.data);
           alert("Registration Successfully");

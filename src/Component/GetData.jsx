@@ -3,6 +3,7 @@ import { Card, CardContent, CardMedia, Typography, Button } from '@mui/material'
 import { Acontext } from '../App';
 import axios from 'axios';
 import Popup from './Popup';
+import Config from '../Config';
 
 const ITEMS_PER_PAGE = 6;
 
@@ -14,9 +15,10 @@ const GetData = () => {
   const[data,setdata]=useState([]);
   const[selectedcard,setselectedcard]=useState();
 
+
  useEffect(()=>{
   axios
-  .get('http://localhost:4000/data')
+  .get(Config.apikeydata)
   .then((res)=>{
     console.log((res.data.Teadata),(res.data.varieties))
     setdata([...(res.data.Teadata),...(res.data.varieties)]);
@@ -49,7 +51,7 @@ const GetData = () => {
   const handleAddToCart = (variety) => {
     const usercart={userid:user.id,...variety}
     axios
-    .post('http://localhost:4000/cart',usercart)
+    .post(Config.apikeycart,usercart)
     .then((res)=>{
       console.log(res)
     })
@@ -58,6 +60,9 @@ const GetData = () => {
     })
     setCartItems(prevCartItems => [...prevCartItems, variety]);
   };
+
+
+  
 
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
   const displayedVarieties = filteredVarieties.slice(
@@ -123,6 +128,7 @@ const GetData = () => {
                 variant="contained"
                 color="primary"
                 className="buy-now-button my-2 mx-2"
+                // onClick={() => handleBuynow(variety)}
               >
                 Buy Now
               </Button>

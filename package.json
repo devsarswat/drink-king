@@ -24,11 +24,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start":"concurrently \"npm run start:json-server\" \"react-scripts start\"",
+    "start": "concurrently \"npm run start:json-server\" \"react-scripts start\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start:json-server": "json-server --watch --port 4000 ./src/data/db.json"
+    "start:json-server": "json-server --watch --port 4001 --host 192.168.0.173 ./src/data/db.json"
   },
   "eslintConfig": {
     "extends": [

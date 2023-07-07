@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import axios from 'axios';
+import Config from '../Config';
 
 const Cart = () => {
   const { cartItems, setCartItems, user } = useContext(Acontext);
@@ -15,7 +16,7 @@ const Cart = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/cart`)
+      .get(Config.apikeycart)
       .then((res) => {
         console.log(res.data);
         setCartItems(res.data);
@@ -42,7 +43,7 @@ const Cart = () => {
     const updatedCartItems = cartItems.filter((item) => item.id !== itemId);
 
     axios
-      .delete(`http://localhost:4000/cart/${itemId}`)
+      .delete(`${Config.apikeycart}/${itemId}`)
       .then((res) => {
         console.log(res);
         setCartItems(updatedCartItems);

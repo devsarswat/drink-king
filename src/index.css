@@ -1,3 +1,15 @@
+::-webkit-scrollbar {
+  width: 0px; 
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb {
+  /* background-color: #888888;  */
+  background-color:inherit 
+}
 .card-container {
   display: flex;
   flex-wrap: wrap;
@@ -11,7 +23,8 @@
   transition: box-shadow 0.3s ease-in-out;
 }
 .product-div{
-  height: 56.6vh;
+  /* height: 56.6vh; */
+  height: calc(60vh - 21px)
 }
 
 .card {
@@ -154,7 +167,7 @@
 .login-button {
   margin-top: 15px !important;
   height: 50px;
-  width: 15%;
+  width: 30%;
   font-size: 16px;
   padding-top: 10px !important;
   
@@ -177,12 +190,13 @@
 .signin-button {
   margin-top: 15px !important;
   height: 50px;
-  width: 70%;
+  width: 60%;
+  margin-bottom: 10px !important;
 }
 
 .signin-field {
   margin-top: 20px;
-  width: 70%;
+  width: 60%;
   height: 60px;
 }
 
@@ -198,6 +212,7 @@
 }
 .register-link{
   margin-top: 10px !important;
+  margin-bottom: 10px !important;
 }
 .heading-l{
   font-size: 30px !important;
@@ -313,6 +328,11 @@
   font-size: 15px !important;
   padding-left: 3rem !important;
 }
+.text-s{
+  margin-top: 0.5rem !important;
+  margin-left: 2rem !important;
+  font-size: 15px !important;
+}
 
 .social-icon {
   font-size: 1.5rem;
@@ -321,7 +341,7 @@
   
 }
 .s-icon{
-  margin-left: 5rem;
+  margin-left: 2rem;
   margin-top: 5px;
 }
 .copy-r{
@@ -408,15 +428,52 @@
     flex-direction: column;
     padding-bottom: 5px !important;
   }
+  .text-s{
+    margin-left: 10px !important;
+  }
   .s-icon{
     margin-top: 0;
-    margin-left: -4rem;
+    margin-left: 0rem;
   }
   .text{
     padding-left: 0rem !important;
     margin-left: -80px !important;
   }
+  .container{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    margin: 20px;
+    height: 70vh;
   
+  }
+  .login-field {
+    margin-top: 20px;
+    width: 80%;
+    height: 60px;
+  }
+
+  
+  .signin-field {
+    margin-top: 20px;
+    width: 80%;
+    height: 60px;
+  }
+  .login-form-container{
+    width: 90%;
+    margin: -30px;
+    
+  }
+  .signin-form-container{
+    width: 90%;
+    margin: -60px;
+    
+  }
+  .signin-button {
+    width: 80%;
+    height: 60px;
+   
+  }
   
 }
 @media screen and (max-height: 564px) and (max-width: 528px){
@@ -427,6 +484,7 @@
     padding: 1rem;
     
   }
+  
 }
 @media screen and (max-height: 564px){
   .popup-heading{

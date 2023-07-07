@@ -5,6 +5,7 @@ import validator from "validator";
 import { Acontext } from "../App";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import Config from "../Config";
 
 const Login = () => {
   const { setisLogin, setuser } = useContext(Acontext);
@@ -24,7 +25,7 @@ const Login = () => {
   
     if (Object.keys(validationErrors).length === 0) {
       axios
-        .get("http://localhost:4000/Userdata")
+        .get(Config.apikeyuserdata)
         .then((res) => {
           if (res) {
             const matchingUser = res.data.find((user) => user.email === formData.email);

@@ -36,8 +36,8 @@ const Footer = () => {
           </div>
         </div>
         <div className="column-2">
-          <Typography variant="body2" className="text">
-            SOCIAL MEDIA:
+          <Typography variant="body2" className="text-s">
+            SOCIAL MEDIA
           </Typography>
           <div className="s-icon">
             <IconButton className="social-icon" aria-label="Facebook">

@@ -3,6 +3,7 @@ import { Card, CardContent, CardMedia, Typography, Button } from '@mui/material'
 import { Acontext } from '../App';
 import axios from 'axios';
 import Popup from './Popup';
+import Config from '../Config';
 
 const ITEMS_PER_PAGE = 6;
 
@@ -41,7 +42,7 @@ const Data = () => {
   const handleAddToCart = (variety) => {
     const usercart={userid:user.id,...variety}
     axios
-    .post('http://localhost:4000/cart',usercart)
+    .post(Config.apikeycart,usercart)
     .then((res)=>{
       console.log(res)
     })
