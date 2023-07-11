@@ -1,5 +1,5 @@
 ::-webkit-scrollbar {
-  width: 0px; 
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {
@@ -7,8 +7,10 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  /* background-color: #888888;  */
-  background-color:inherit 
+  background-color:  #198754; 
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555; 
 }
 .card-container {
   display: flex;
@@ -386,6 +388,40 @@
   font-weight: bold ;
   margin-right: 0.5rem;
 }
+/* Product Detail page css */
+.product-detail {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding-left: 5rem;
+  margin-bottom: 0.6rem;
+}
+
+.product-image {
+  flex: 0 0 auto; 
+  margin-right: 16px;
+  padding: 20px; 
+  
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  /* flex: -1;  */
+  width: 40%;
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px; 
+  
+}
+
+.product-details p {
+  margin-bottom: 8px;
+}
+
 
 
 
@@ -407,11 +443,23 @@
     margin-left: 40px;
     padding-left: 20px;
   }
- 
+  .product-detail{
+    display: flex;
+    flex-direction: column;
+    padding-left: 0rem;
+    margin-bottom: -15rem;
+    
+  }
+  .product-info {
+    padding-left: 0rem;
+    width: 70%;
+    padding-bottom: 10px;
+  } 
  
 }
 @media screen and (max-width: 807px) {
   .footer{
+    display: flex;
     margin-top: 50%;
     flex-direction: row;
     padding: 1rem;

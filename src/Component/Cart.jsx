@@ -53,6 +53,44 @@ const Cart = () => {
       });
   };
 
+  const handleBuyNow = (variety) => {
+    const usercart = { userid: user.id, ...variety };
+    axios
+      .post(Config.apikeyorder, usercart)
+      .then((res) => {
+        console.log(res);
+        alert("Your product was added successfully");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const handleOrder = () => {
+    axios
+      .post(Config.apikeyorder, filteredItems)
+      .then((res) => {
+        console.log(res);
+        alert("Your products were added successfully");
+        const deletePromises = filteredItems.map((item) => {
+          return axios.delete(`${Config.apikeycart}/${item.id}`);
+          
+        });
+
+        Promise.all(deletePromises)
+          .then((res) => {
+            console.log(res);
+            setFilteredItems([]);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   const renderCartItems = () => {
     const uniqueItems = {};
     filteredItems.forEach((item) => {
@@ -62,7 +100,7 @@ const Cart = () => {
         uniqueItems[item.name].quantity += 1;
       }
     });
-  
+
     return Object.values(uniqueItems).map((item, index) => (
       <Card key={index} className="card">
         <CardMedia component="img" height="140" image={item.image} alt={item.name} />
@@ -79,7 +117,7 @@ const Cart = () => {
           <Typography variant="body2" color="text.secondary" className="my-2">
             Quantity: {item.quantity}
           </Typography>
-          <Button variant="contained" color="primary" className="buy-now-button my-2 mx-2">
+          <Button variant="contained" color="primary" className="buy-now-button my-2 mx-2" onClick={() => handleBuyNow(item)}>
             Buy Now
           </Button>
           <Button
@@ -94,7 +132,6 @@ const Cart = () => {
       </Card>
     ));
   };
-  
 
   return (
     <div className="page-container">
@@ -106,7 +143,7 @@ const Cart = () => {
             </Typography>
             {cartItems.length === 0 ? (
               <Typography variant="body2" color="text.secondary">
-                Your cartis empty.
+                Your cart is empty.
               </Typography>
             ) : (
               <div className="card-content">{renderCartItems()}</div>
@@ -126,7 +163,7 @@ const Cart = () => {
             <Typography variant="body2" className="Text-price">
               Total Price: ₹ {totalPrice}
             </Typography>
-            <Button variant="contained" color="warning" className="Place-Order-button my-2">
+            <Button variant="contained" color="warning" className="Place-Order-button my-2" onClick={handleOrder}>
               Place Order
             </Button>
           </CardContent>

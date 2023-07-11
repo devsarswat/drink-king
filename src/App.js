@@ -10,10 +10,12 @@ import Product from "./Component/Product";
 import Data from "./Component/Data";
 import Cart from "./Component/Cart";
 import Profile from "./Component/Profile";
+import ProductDetail from "./Component/ProductDetail";
 export const Acontext = createContext();
 
 const App = () => {
   const [search, setSearch] = useState('');
+  const[product,setproduct]=useState();
   const [isLogin, setisLogin] = useState(false);
   const [data, setdata] = useState(() => {
     const storedData = localStorage.getItem("productData");
@@ -27,7 +29,7 @@ const App = () => {
   }, [data]);
 
   return (
-    <Acontext.Provider value={{ search, setSearch, data, setdata, cartItems, setCartItems, isLogin, setisLogin, user, setuser }}>
+    <Acontext.Provider value={{ product,setproduct,search, setSearch, data, setdata, cartItems, setCartItems, isLogin, setisLogin, user, setuser }}>
       <Navbar />
       <Routes>
         <Route path="/alldata" element={<GetData />} />
@@ -37,6 +39,7 @@ const App = () => {
         <Route path="/cart" element={<PrivateRoute element={<Cart />} />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signin" element={<Signin />} />
+        <Route path="/productdetail" element={<ProductDetail />} />
       </Routes>
     </Acontext.Provider>
   );

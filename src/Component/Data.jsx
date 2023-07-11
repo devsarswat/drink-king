@@ -4,16 +4,18 @@ import { Acontext } from '../App';
 import axios from 'axios';
 import Popup from './Popup';
 import Config from '../Config';
+import { useNavigate } from 'react-router-dom';
 
 const ITEMS_PER_PAGE = 6;
 
 const Data = () => {
-  const { search, setCartItems ,isLogin,user} = useContext(Acontext);
+  const { search, setCartItems ,isLogin,user,setproduct} = useContext(Acontext);
   const [currentPage, setCurrentPage] = useState(1);
   const [filteredVarieties, setFilteredVarieties] = useState([]);
   const [sortType, setSortType] = useState(null);
   const { data } = useContext(Acontext);
   const[selectedcard,setselectedcard]=useState();
+  const nevigate=useNavigate();
  
 
   useEffect(() => {
@@ -51,6 +53,18 @@ const Data = () => {
     })
     setCartItems(prevCartItems => [...prevCartItems, variety]);
   };
+  const handleBuynow=(variety)=>{
+    const usercart={userid:user.id,...variety}
+    axios
+    .post(Config.apikeyorder,usercart)
+    .then((res)=>{
+      console.log(res)
+      alert("your Product added Successfully")
+    })
+    .catch((error)=>{
+      console.log(error);
+    })
+  }
 
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
   const displayedVarieties = filteredVarieties.slice(
@@ -63,6 +77,10 @@ const Data = () => {
   const handleClosePopup = () => {
     setselectedcard(null);
   };
+  const handlePeoduct=(variety)=>{
+    setproduct(variety);
+    nevigate('/productdetail')
+  }
 
   return (
     <div className="Sbar">
@@ -102,7 +120,8 @@ const Data = () => {
           <Card key={index} className="card" >
             <CardMedia component="img" height="140" image={variety.image} alt={variety.name} onClick={()=>handleOpenPopup(variety)}/>
             <CardContent>
-              <Typography variant="h5" component="div">
+            <div onClick={()=>handlePeoduct(variety)}>
+            <Typography variant="h5" component="div">
                 {variety.name}
               </Typography>
               <Typography variant="body2" color="text.secondary">
@@ -111,10 +130,12 @@ const Data = () => {
               <Typography variant="body2" color="text.secondary" className="my-2">
               <span style={{fontWeight :'bold',color:'black',fontSize:'15px'}}>₹ {variety.price}</span>
               </Typography>
+            </div>
               <Button
                 variant="contained"
                 color="primary"
                 className="buy-now-button my-2 mx-2"
+                onClick={() => handleBuynow(variety)}
               >
                 Buy Now
               </Button>
