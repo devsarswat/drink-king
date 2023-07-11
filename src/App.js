@@ -11,6 +11,7 @@ import Data from "./Component/Data";
 import Cart from "./Component/Cart";
 import Profile from "./Component/Profile";
 import ProductDetail from "./Component/ProductDetail";
+import OrderHistory from "./Component/OrderHistory";
 export const Acontext = createContext();
 
 const App = () => {
@@ -37,6 +38,7 @@ const App = () => {
         <Route path="/data" element={<Data />} />
         <Route path="/profile" element={<PrivateRoute element={<Profile />} />} />
         <Route path="/cart" element={<PrivateRoute element={<Cart />} />} />
+        <Route path="/order" element={<PrivateRoute element={<OrderHistory />} />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/productdetail" element={<ProductDetail />} />

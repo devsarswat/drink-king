@@ -12,6 +12,55 @@
 ::-webkit-scrollbar-thumb:hover {
   background-color: #555; 
 }
+.order-history-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
+}
+/* 
+.order-history-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; 
+}
+
+.order-card {
+  flex: 0 0 calc(33.33% - 20px); 
+  max-width: 335px;
+  margin: 1rem;
+  cursor: pointer;
+} */
+.order-history-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.o-heading {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.order-history-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.order-card {
+  max-width: 335px;
+  margin: 1rem;
+  cursor: pointer;
+  
+}
+
+.order-card:hover {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+
 .card-container {
   display: flex;
   flex-wrap: wrap;

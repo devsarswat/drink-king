@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Acontext } from "../App";
-import { BsPersonFill, BsCartFill, BsGearFill, BsBoxArrowRight } from 'react-icons/bs';
+import { BsPersonFill, BsCart4, BsGearFill, BsBoxArrowRight,BsBoxSeam } from 'react-icons/bs';
 
 
 
@@ -80,12 +80,17 @@ const Navbar = () => {
                   </li>
                   <li>
                     <Link className="dropdown-item" to="/cart" onClick={toggleDropdown}>
-                      <BsCartFill className="me-2" /> Cart 
+                      <BsCart4 className="me-2" /> Cart 
                     </Link>
                   </li>
                   
                   {isLogin && (
                     <>
+                    <li>
+                    <Link className="dropdown-item" to="/order" onClick={toggleDropdown}>
+                      <BsBoxSeam className="me-2" /> Order
+                    </Link>
+                  </li>
                     <li>
                     <Link className="dropdown-item" to="/" onClick={toggleDropdown}>
                       <BsGearFill className="me-2" /> Settings

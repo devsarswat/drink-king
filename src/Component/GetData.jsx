@@ -5,6 +5,8 @@ import axios from 'axios';
 import Popup from './Popup';
 import Config from '../Config';
 import { useNavigate } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
+
 
 const ITEMS_PER_PAGE = 6;
 
@@ -51,7 +53,7 @@ const GetData = () => {
   };
 
   const handleAddToCart = (variety) => {
-    const usercart={userid:user.id,...variety}
+    const usercart = { id: uuidv4(), userid: user.id, ...variety };
     axios
     .post(Config.apikeycart,usercart)
     .then((res)=>{
@@ -63,7 +65,8 @@ const GetData = () => {
     setCartItems(prevCartItems => [...prevCartItems, variety]);
   };
   const handleBuynow=(variety)=>{
-    const usercart={userid:user.id,...variety}
+    const currentDate = new Date();
+  const usercart = { id: uuidv4(), userid: user.id, date: currentDate, ...variety };
     axios
     .post(Config.apikeyorder,usercart)
     .then((res)=>{

@@ -65,17 +65,20 @@ const Cart = () => {
         console.log(error);
       });
   };
-
-  const handleOrder = () => {
-    axios
-      .post(Config.apikeyorder, filteredItems)
-      .then((res) => {
-        console.log(res);
-        alert("Your products were added successfully");
-        const deletePromises = filteredItems.map((item) => {
-          return axios.delete(`${Config.apikeycart}/${item.id}`);
-          
-        });
+    const handleOrder = () => {
+      const orderPromises = filteredItems.map((item) => {
+        const currentDate = new Date();
+        const itemWithDate = { ...item, date: currentDate };
+        return axios.post(Config.apikeyorder, itemWithDate);
+      });
+    
+      Promise.all(orderPromises)
+        .then((res) => {
+          console.log(res);
+          alert("Your products were added successfully");
+          const deletePromises = filteredItems.map((item) => {
+            return axios.delete(`${Config.apikeycart}/${item.id}`);
+          });
 
         Promise.all(deletePromises)
           .then((res) => {
