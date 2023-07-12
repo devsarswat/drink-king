@@ -50,7 +50,7 @@ const Navbar = () => {
             </li>
           <li className="nav-item mx-2">
               <NavLink className="nav-link" aria-current="page" to="/alldata">
-                Order
+                Product
               </NavLink>
             </li>
           </ul>

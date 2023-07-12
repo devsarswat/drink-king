@@ -4,6 +4,7 @@ import { Button, Typography } from "@mui/material";
 import axios from "axios";
 import Config from "../Config";
 import Footer from "./Footer";
+import { v4 as uuidv4 } from 'uuid';
 
 const ProductDetail = () => {
   const { product, setCartItems, user } = useContext(Acontext);
@@ -20,6 +21,19 @@ const ProductDetail = () => {
       });
     setCartItems((prevCartItems) => [...prevCartItems, product]);
   };
+  const handleBuynow=(displayedProduct)=>{
+    const currentDate = new Date();
+  const usercart = { id: uuidv4(), userid: user.id, date: currentDate, ...displayedProduct };
+    axios
+    .post(Config.apikeyorder,usercart)
+    .then((res)=>{
+      console.log(res)
+      alert("your Product added Successfully")
+    })
+    .catch((error)=>{
+      console.log(error);
+    })
+  }
 
   const calculateDiscountedPrice = () => {
     const discountPercentage = displayedProduct.discount || 0;
@@ -84,6 +98,7 @@ const ProductDetail = () => {
           variant="contained"
           color="primary"
           className="buy-now-button my-2"
+          onClick={() => handleBuynow(displayedProduct)}
         >
           Buy Now
         </Button>
