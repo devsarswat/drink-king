@@ -157,7 +157,7 @@ const Profile = () => {
           <FaUserCircle size={80} className="uname" />
         )}
       </div>
-      <div>
+      <div className="profile-uplod">
         {isEditing && ( <div>
         <input
                   type="file"

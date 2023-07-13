@@ -299,6 +299,11 @@
   justify-content: center;
   align-items: center;
   margin-top: 1rem;
+  margin-left: 7rem;
+}
+.profile-uplod{
+  padding: 15px 0px;
+  margin-left: 3rem
 }
 
 .container-p{
@@ -621,6 +626,7 @@
   margin: 50px;
   height: auto;
   background-color: rgb(226 241 241);
+  margin-bottom: -14rem;
  
 }
 .profile-photo{
