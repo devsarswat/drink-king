@@ -68,10 +68,10 @@ const Navbar = () => {
             <li className="nav-item mx-2">
             <button className="btn btn-link nav-link" onClick={toggleDropdown}>
   {isLogin && <strong className="user-name">{user.name}</strong>}
-  {user ? (
+  {user && user.image? (
     <img src={user.image} alt="Profile" className="profile-icon-i" />
   ) : (
-    <img src={profileIcon} alt="Profile Icon" className="profile-icon" />
+    <img src={profileIcon} alt="Profile Icon" className="profile-icon profile-icon-i" />
   )}
 </button>
  

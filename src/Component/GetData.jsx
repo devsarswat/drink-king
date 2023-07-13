@@ -144,15 +144,15 @@ const handlePeoduct=(variety)=>{
               <span style={{fontWeight :'bold',color:'black',fontSize:'15px'}}>₹ {variety.price}</span>
               </Typography>
             </div>
-              
-              <Button
+              {isLogin && (<Button
                 variant="contained"
                 color="primary"
                 className="buy-now-button my-2 mx-2"
                 onClick={() => handleBuynow(variety)}
               >
                 Buy Now
-              </Button>
+              </Button>)}
+              
               <Button
                 variant="outlined"
                 color="primary"
