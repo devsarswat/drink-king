@@ -134,6 +134,11 @@
   color: black;
   margin-top: 3px !important; 
 }
+.profile-icon-i{
+  height: 39px;
+  border-radius: 100%;
+  margin-left: 15px;
+}
 
 .dropdown-menu {
   right: 15px;
@@ -285,17 +290,35 @@
   display: flex;
   padding-left: 10%;
 }
+.profile-photo{
+  width: 16%;
+  height: 180px;
+  border-radius: 10%;
+  display: flex;
+  background-color: #ccc;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
 .container-p{
   margin: 50px;
-  height: 70vh;
+  height: auto;
   background-color: rgb(226 241 241);
 }
 
+.profile-picture{
+  height: 180px;
+  border-radius: 10%;
+  background-color: #ccc;
+  
+}
+
 .social-media{
-  margin-top: 10px;
-  padding-left: 2%;
+  margin-top: 15px;
+  padding-left: 50%;
   font-size: 20px;
-  margin-left: 130px;
+  padding-bottom: 10px
   
 }
 
@@ -587,6 +610,66 @@
   .pagination-button {
     margin-bottom: 10px !important;
   }
+  /* Profile Css */
+.main-container{
+  display: flex;
+  padding-left: 10%;
+  flex-direction: column;
+  
+}
+.container-p{
+  margin: 50px;
+  height: auto;
+  background-color: rgb(226 241 241);
+ 
+}
+.profile-photo{
+  width: 50%;
+  background-color: #ccc;
+  margin-left:4rem;
+  margin-top: 1rem;
+  
+}
+
+
+.social-media{
+  margin-top: 10px;
+  padding-left: 2%;
+  font-size: 20px;
+  margin-left: 130px;
+  padding-bottom: 1rem;
+}
+
+.s-li{
+  text-decoration: none !important;
+  color: black;
+}
+.icons{
+  color: blue;
+  font-size: 21px
+}
+
+
+.p-text {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-left: 0;
+  margin-top: 30px;
+}
+
+.text-field {
+  width: 100%;
+  margin-bottom: 30px !important;
+  padding-right: 10px !important;
+}
+.edit-btn{
+  margin-top: 10px !important;
+  float: right;
+  margin-right: 10px !important;
+  font-size: 20px !important;
+  color: black !important;
+}
  
   
 }
@@ -606,5 +689,11 @@
   }
   .popup-text{
     line-height: 1rem !important;
+  }
+}
+@media screen and (max-width: 991px) {
+  .user-name{
+    float: right;
+    padding: 5px 15px;
   }
 }

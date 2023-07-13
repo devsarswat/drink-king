@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState ,useEffect} from "react";
 import axios from "axios";
 import { TextField, Button, Typography } from "@mui/material";
 import validator from "validator";
@@ -13,6 +13,13 @@ const Login = () => {
   const [formData, setFormData] = useState(data);
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
+  useEffect(() => {
+    const storedUser = JSON.parse(localStorage.getItem("userid"));
+    if (storedUser) {
+      setuser(storedUser);
+      setisLogin(storedUser);
+    }
+  }, [setuser, setisLogin]);
 
   const handleValue = (e) => {
     const { name, value } = e.target;
@@ -34,8 +41,9 @@ const Login = () => {
                 setuser(matchingUser);
                 alert("Login Successful");
                 setFormData(data);
-                setisLogin(true);
+                setisLogin(matchingUser);
                 navigate("/");
+                localStorage.setItem("userid",JSON.stringify(matchingUser))
               } else {
                 alert("Invalid password. Please try again.");
               }

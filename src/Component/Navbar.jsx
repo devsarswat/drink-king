@@ -8,7 +8,7 @@ import { BsPersonFill, BsCart4, BsGearFill, BsBoxArrowRight,BsBoxSeam } from 're
 import profileIcon from '../Images/account_thin.svg'; 
 
 const Navbar = () => {
-  const {isLogin,setisLogin, user}=useContext(Acontext)
+  const {isLogin,setisLogin, user,setuser}=useContext(Acontext)
   const { search, setSearch } = useContext(Acontext);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -21,7 +21,8 @@ const Navbar = () => {
   };
   const handlelogot=()=>{
     setIsDropdownOpen(!isDropdownOpen);
-    setisLogin(false);
+    setisLogin(localStorage.removeItem("userid"));
+    setuser(null);
   }
 
   return (
@@ -65,12 +66,16 @@ const Navbar = () => {
               />
             </li>
             <li className="nav-item mx-2">
-              <button
-                className="btn btn-link nav-link"
-                onClick={toggleDropdown}
-              >{isLogin && <> <strong >{user.name} </strong> </>}
-                <img src={profileIcon} alt="Profile" className="profile-icon" /> 
-              </button>
+            <button className="btn btn-link nav-link" onClick={toggleDropdown}>
+  {isLogin && <strong className="user-name">{user.name}</strong>}
+  {user ? (
+    <img src={user.image} alt="Profile" className="profile-icon-i" />
+  ) : (
+    <img src={profileIcon} alt="Profile Icon" className="profile-icon" />
+  )}
+</button>
+ 
+
               {isDropdownOpen && (
                 <ul className="dropdown-menu dropdown-menu-start show">
                   <li>

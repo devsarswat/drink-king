@@ -13,6 +13,7 @@ import Config from "../Config";
 import { BsPencilSquare, BsSave } from "react-icons/bs";
 import validator from "validator";
 import { useContext } from "react";
+import Footer from "./Footer";
 
 const Profile = () => {
   const { user, setuser } = useContext(Acontext);
@@ -48,6 +49,7 @@ const Profile = () => {
       .get(`${Config.apikeyuserdata}/${user.id}`)
       .then((res) => {
         setuser(res.data);
+        localStorage.setItem("userid",JSON.stringify(res.data))
       })
       .catch((error) => {
         console.error("Error fetching user data:", error);
@@ -130,7 +132,7 @@ const Profile = () => {
     return formErrors;
   };
 
-  return (
+  return (<>
     <div className="container-p">
       {isEditing ? (
         <Button onClick={handleSaveClick} className="edit-btn">
@@ -145,24 +147,29 @@ const Profile = () => {
         Profile Section
       </Typography>
       <div className="main-container">
-      <div
-          style={{
-            width: "16%",
-            height: "180px",
-            borderRadius: "10%",
-            backgroundColor: "#ccc",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
+      <div>
+      <div 
+          className="profile-photo"
         >
            {editedUser.image ? (
           <img src={editedUser.image} alt="Profile" className="profile-picture" />
         ) : (
           <FaUserCircle size={80} className="uname" />
         )}
-          
-       
+      </div>
+      <div>
+        {isEditing && ( <div>
+        <input
+                  type="file"
+                  accept="image/*"
+                  onChange={handleProfilePictureChange}
+                />
+
+                <Button onClick={handleProfilePictureUpload}>
+                  Upload Profile Picture
+                </Button>
+        </div>) }
+      </div>
       </div>
         <div className="p-text">
           {isEditing ? (
@@ -276,7 +283,7 @@ const Profile = () => {
             </>
           ) : (
             <>
-              <div>
+              <div >
                 <Typography variant="h6">Name: {user.name}</Typography>
                 <Typography variant="body1">ID: {user.id}</Typography>
                 <Typography variant="body1">Address: {user.address}</Typography>
@@ -319,6 +326,7 @@ const Profile = () => {
         </Link>
       </div>
     </div>
+    <Footer/></>
   );
 };
 

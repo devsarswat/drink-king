@@ -15,20 +15,27 @@ import OrderHistory from "./Component/OrderHistory";
 export const Acontext = createContext();
 
 const App = () => {
+  const udata = (() => {
+    const storedUser = JSON.parse(localStorage.getItem("userid"));
+    return storedUser ? storedUser : null;
+  });
   const [search, setSearch] = useState('');
   const[product,setproduct]=useState();
-  const [isLogin, setisLogin] = useState(false);
+  const [isLogin, setisLogin] = useState(udata);
   const [data, setdata] = useState(() => {
     const storedData = localStorage.getItem("productData");
     return storedData ? JSON.parse(storedData) : [];
   });
   const [cartItems, setCartItems] = useState([]);
-  const [user, setuser] = useState([]);
+  const [user, setuser] = useState(udata);
+  console.log("user",user)
+  console.log("islogin",isLogin)
 
   useEffect(() => {
     localStorage.setItem("productData", JSON.stringify(data));
   }, [data]);
 
+  
   return (
     <Acontext.Provider value={{ product,setproduct,search, setSearch, data, setdata, cartItems, setCartItems, isLogin, setisLogin, user, setuser }}>
       <Navbar />

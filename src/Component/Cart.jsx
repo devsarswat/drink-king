@@ -65,34 +65,62 @@ const Cart = () => {
         console.log(error);
       });
   };
-    const handleOrder = () => {
-      const orderPromises = filteredItems.map((item) => {
+  //   const handleOrder = () => {
+  //     const orderPromises = filteredItems.map((item) => {
+  //       const currentDate = new Date();
+  //       const itemWithDate = { ...item, date: currentDate };
+  //       return axios.post(Config.apikeyorder, itemWithDate);
+  //     });
+    
+  //     Promise.all(orderPromises)
+  //       .then((res) => {
+  //         console.log(res);
+  //         alert("Your products were added successfully");
+  //         const deletePromises = filteredItems.map((item) => {
+  //           return axios.delete(`${Config.apikeycart}/${item.id}`);
+  //         });
+
+  //       Promise.all(deletePromises)
+  //         .then((res) => {
+  //           console.log(res);
+  //           setFilteredItems([]);
+  //         })
+  //         .catch((error) => {
+  //           console.log(error);
+  //         });
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // };
+  const handleOrder = async () => {
+    try {
+      const orderResponses = [];
+      const deleteResponses = [];
+  
+      for (const item of filteredItems) {
         const currentDate = new Date();
         const itemWithDate = { ...item, date: currentDate };
-        return axios.post(Config.apikeyorder, itemWithDate);
-      });
-    
-      Promise.all(orderPromises)
-        .then((res) => {
-          console.log(res);
-          alert("Your products were added successfully");
-          const deletePromises = filteredItems.map((item) => {
-            return axios.delete(`${Config.apikeycart}/${item.id}`);
-          });
-
-        Promise.all(deletePromises)
-          .then((res) => {
-            console.log(res);
-            setFilteredItems([]);
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+  
+        const orderResponse = await axios.post(Config.apikeyorder, itemWithDate);
+        orderResponses.push(orderResponse);
+      }
+  
+      console.log(orderResponses);
+      alert("Your products were added successfully");
+  
+      for (const item of filteredItems) {
+        const deleteResponse = await axios.delete(`${Config.apikeycart}/${item.id}`);
+        deleteResponses.push(deleteResponse);
+      }
+  
+      console.log(deleteResponses);
+      setFilteredItems([]);
+    } catch (error) {
+      console.log(error);
+    }
   };
+  
 
   const renderCartItems = () => {
     const uniqueItems = {};
