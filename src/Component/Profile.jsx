@@ -268,17 +268,6 @@ const Profile = () => {
                   error={!!errors.phone}
                   helperText={errors.phone}
                 />
-                  <div>
-        <input
-                  type="file"
-                  accept="image/*"
-                  onChange={handleProfilePictureChange}
-                />
-
-                <Button onClick={handleProfilePictureUpload}>
-                  Upload Profile Picture
-                </Button>
-        </div>
               </div>
             </>
           ) : (
