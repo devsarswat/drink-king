@@ -37,7 +37,7 @@ const OrderHistory = () => {
           {orderHistory.map((order) => {
             if (user.id === order.userid) {
               const orderDate = new Date(order.date);
-              const formattedDate = orderDate.toLocaleDateString();
+              const formattedDate = orderDate.toLocaleString();
               const discountedPrice = calculateDiscountedPrice(
                 order.price,
                 order.discount

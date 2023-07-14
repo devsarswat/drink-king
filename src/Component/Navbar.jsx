@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Acontext } from "../App";
-import { BsPersonFill, BsCart4, BsGearFill, BsBoxArrowRight,BsBoxSeam } from 'react-icons/bs';
+import { BsPersonFill, BsCart4, BsGearFill, BsBoxArrowRight,BsBoxSeam ,BsChevronDown} from 'react-icons/bs';
 
 
 
@@ -67,7 +67,7 @@ const Navbar = () => {
             </li>
             <li className="nav-item mx-2">
             <button className="btn btn-link nav-link" onClick={toggleDropdown}>
-  {isLogin && <strong className="user-name">{user.name}</strong>}
+  {isLogin && <strong className="user-name">{user.name} <BsChevronDown/></strong>}
   {user && user.image? (
     <img src={user.image} alt="Profile" className="profile-icon-i" />
   ) : (
