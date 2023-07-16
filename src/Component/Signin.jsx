@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { TextField, Button, Typography} from "@mui/material";
+import { TextField, Button, Typography } from "@mui/material";
 import validator from "validator";
 import { useNavigate } from "react-router-dom";
 import Config from "../Config";
@@ -67,9 +67,7 @@ const Signin = () => {
 
     if (validator.isEmpty(formData.confirmpassword)) {
       errors.confirmPassword = "Confirm Password is required";
-    } else if (
-      !validator.equals(formData.password, formData.confirmpassword)
-    ) {
+    } else if (!validator.equals(formData.password, formData.confirmpassword)) {
       errors.confirmPassword = "Passwords do not match";
     }
 
@@ -91,7 +89,7 @@ const Signin = () => {
       </div>
       <div className="signin-form-container">
         <form onSubmit={handleSubmit} className="signin-form">
-        <Typography variant="body1" className="heading-l">
+          <Typography variant="body1" className="heading-l">
             Registration
           </Typography>
           <TextField

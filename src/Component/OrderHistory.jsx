@@ -52,10 +52,18 @@ const OrderHistory = () => {
                     alt={order.name}
                   />
                   <CardContent>
-                    <Typography variant="h6" style={{ color: 'black' ,fontWeight :'bold'}}>{order.name}</Typography>
+                    <Typography
+                      variant="h6"
+                      style={{ color: "black", fontWeight: "bold" }}
+                    >
+                      {order.name}
+                    </Typography>
                     {order.discount && (
                       <>
-                        <Typography variant="body2" className="product-discount">
+                        <Typography
+                          variant="body2"
+                          className="product-discount"
+                        >
                           <span style={{ fontSize: "20px", color: "red" }}>
                             -{order.discount}%{" "}
                           </span>{" "}
@@ -65,21 +73,60 @@ const OrderHistory = () => {
                     )}
                     {order.discount ? (
                       <Typography variant="body2" className="product-price">
-                      <span style={{fontWeight :'bold',color:'black',fontSize:'15px'}}>Price:{"₹"}</span>
+                        <span
+                          style={{
+                            fontWeight: "bold",
+                            color: "black",
+                            fontSize: "15px",
+                          }}
+                        >
+                          Price:{"₹"}
+                        </span>
                         <span style={{ textDecoration: "line-through" }}>
                           {order.price}
                         </span>
                       </Typography>
                     ) : (
                       <Typography variant="body2" className="product-price">
-                      <span style={{fontWeight :'bold',color:'black',fontSize:'15px'}}>Price: ₹</span> {order.price}
+                        <span
+                          style={{
+                            fontWeight: "bold",
+                            color: "black",
+                            fontSize: "15px",
+                          }}
+                        >
+                          Price: ₹
+                        </span>{" "}
+                        {order.price}
                       </Typography>
                     )}
                     <Typography variant="body1">
-                    <span style={{fontWeight :'bold',color:'black',fontSize:'15px'}}>Order Date:</span>  {formattedDate}
+                      <span
+                        style={{
+                          fontWeight: "bold",
+                          color: "black",
+                          fontSize: "15px",
+                        }}
+                      >
+                        Order Date:
+                      </span>{" "}
+                      {formattedDate}
                     </Typography>
-                    <Typography variant="body1" style={{position:'relative' }}>
-                    <span style={{fontWeight :'bold',color:'black',fontSize:'15px'}}> Order ID:</span> <span style={{position:"absolute"}}>{order.id}</span>
+                    <Typography
+                      variant="body1"
+                      style={{ position: "relative" }}
+                    >
+                      <span
+                        style={{
+                          fontWeight: "bold",
+                          color: "black",
+                          fontSize: "15px",
+                        }}
+                      >
+                        {" "}
+                        Order ID:
+                      </span>{" "}
+                      <span style={{ position: "absolute" }}>{order.id}</span>
                     </Typography>
                   </CardContent>
                 </Card>

@@ -47,9 +47,9 @@ const Popup = ({ variety, onClose }) => {
               ₹{calculateDiscountedPrice()}
             </Typography>
             <Typography variant="body2" className="popup-text-p">
-            M.R.P : {" "}
+              M.R.P :{" "}
               <span style={{ textDecoration: "line-through" }}>
-             ₹{variety.price}
+                ₹{variety.price}
               </span>
             </Typography>
           </>

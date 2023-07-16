@@ -1,12 +1,12 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Acontext } from '../App';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import axios from 'axios';
-import Config from '../Config';
+import React, { useContext, useEffect, useState } from "react";
+import { Acontext } from "../App";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import Typography from "@mui/material/Typography";
+import CardMedia from "@mui/material/CardMedia";
+import Button from "@mui/material/Button";
+import axios from "axios";
+import Config from "../Config";
 
 const Cart = () => {
   const { cartItems, setCartItems, user } = useContext(Acontext);
@@ -55,15 +55,22 @@ const Cart = () => {
 
   const handleBuyNow = (variety) => {
     const usercart = { userid: user.id, ...variety };
-    axios
-      .post(Config.apikeyorder, usercart)
-      .then((res) => {
-        console.log(res);
-        alert("Your product was added successfully");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+ 
+    const confirmResult = window.confirm("Are you sure you want to add this product to your cart?");
+  
+    if (confirmResult) {
+      axios
+        .post(Config.apikeyorder, usercart)
+        .then((res) => {
+          console.log(res);
+          alert("Your product added successfully");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } else {
+      console.log("Product addition canceled");
+    }
   };
   //   const handleOrder = () => {
   //     const orderPromises = filteredItems.map((item) => {
@@ -71,7 +78,7 @@ const Cart = () => {
   //       const itemWithDate = { ...item, date: currentDate };
   //       return axios.post(Config.apikeyorder, itemWithDate);
   //     });
-    
+
   //     Promise.all(orderPromises)
   //       .then((res) => {
   //         console.log(res);
@@ -102,15 +109,26 @@ const Cart = () => {
         const currentDate = new Date();
         const itemWithDate = { ...item, date: currentDate };
   
-        const orderResponse = await axios.post(Config.apikeyorder, itemWithDate);
+        const orderResponse = await axios.post(
+          Config.apikeyorder,
+          itemWithDate
+        );
         orderResponses.push(orderResponse);
       }
   
       console.log(orderResponses);
+  
+      const confirmation = window.confirm("Are you sure to order all this Product?");
+      if (!confirmation) {
+        return; // If the user clicks "Cancel", exit the function
+      }
+  
       alert("Your products were added successfully");
   
       for (const item of filteredItems) {
-        const deleteResponse = await axios.delete(`${Config.apikeycart}/${item.id}`);
+        const deleteResponse = await axios.delete(
+          `${Config.apikeycart}/${item.id}`
+        );
         deleteResponses.push(deleteResponse);
       }
   
@@ -134,7 +152,12 @@ const Cart = () => {
 
     return Object.values(uniqueItems).map((item, index) => (
       <Card key={index} className="card">
-        <CardMedia component="img" height="140" image={item.image} alt={item.name} />
+        <CardMedia
+          component="img"
+          height="140"
+          image={item.image}
+          alt={item.name}
+        />
         <CardContent>
           <Typography variant="h5" component="div">
             {item.name}
@@ -148,7 +171,12 @@ const Cart = () => {
           <Typography variant="body2" color="text.secondary" className="my-2">
             Quantity: {item.quantity}
           </Typography>
-          <Button variant="contained" color="primary" className="buy-now-button my-2 mx-2" onClick={() => handleBuyNow(item)}>
+          <Button
+            variant="contained"
+            color="primary"
+            className="buy-now-button my-2 mx-2"
+            onClick={() => handleBuyNow(item)}
+          >
             Buy Now
           </Button>
           <Button
@@ -167,7 +195,7 @@ const Cart = () => {
   return (
     <div className="page-container">
       <div className="card-container-e">
-        <Card sx={{ display: 'flex', flexDirection: 'column' }}>
+        <Card sx={{ display: "flex", flexDirection: "column" }}>
           <CardContent>
             <Typography variant="h4" component="div">
               Shopping Cart
@@ -194,7 +222,12 @@ const Cart = () => {
             <Typography variant="body2" className="Text-price">
               Total Price: ₹ {totalPrice}
             </Typography>
-            <Button variant="contained" color="warning" className="Place-Order-button my-2" onClick={handleOrder}>
+            <Button
+              variant="contained"
+              color="warning"
+              className="Place-Order-button my-2"
+              onClick={handleOrder}
+            >
               Place Order
             </Button>
           </CardContent>

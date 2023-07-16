@@ -12,7 +12,7 @@ const Footer = () => {
         </Typography>
         <div>
           <div className="cl-1">
-          <Link
+            <Link
               className="text"
               to="/"
               style={{ textDecoration: "none", color: "inherit" }}
@@ -53,7 +53,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="copy-r">
-        <Typography variant="body2" align="center" className="Text-copy" >
+        <Typography variant="body2" align="center" className="Text-copy">
           &copy; {new Date().getFullYear()} Drink Kings
         </Typography>
       </div>
@@ -62,4 +62,3 @@ const Footer = () => {
 };
 
 export default Footer;
-

@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { Typography, TextField, Button, Radio, RadioGroup, FormControlLabel } from "@mui/material";
+import {
+  Typography,
+  TextField,
+  Button,
+  Radio,
+  RadioGroup,
+  FormControlLabel,
+} from "@mui/material";
 import { Acontext } from "../App";
 import { Link } from "react-router-dom";
 import {
@@ -32,7 +39,7 @@ const Profile = () => {
       axios
         .patch(`${Config.apikeyuserdata}/${user.id}`, editedUser)
         .then((response) => {
-          console.log("User updated successfully:", response.data);
+          alert("User updated successfully:");
           setIsEditing(false);
           fetchData();
         })
@@ -49,7 +56,7 @@ const Profile = () => {
       .get(`${Config.apikeyuserdata}/${user.id}`)
       .then((res) => {
         setuser(res.data);
-        localStorage.setItem("userid",JSON.stringify(res.data))
+        localStorage.setItem("userid", JSON.stringify(res.data));
       })
       .catch((error) => {
         console.error("Error fetching user data:", error);
@@ -66,27 +73,28 @@ const Profile = () => {
   const handleProfilePictureChange = (e) => {
     setProfilePicture(e.target.files[0]);
   };
-  
+
   const handleProfilePictureUpload = () => {
     if (profilePicture) {
       const reader = new FileReader();
-  
+
       reader.onload = () => {
         const base64String = reader.result;
         setEditedUser({
           ...editedUser,
           image: base64String,
         });
-  
-        axios.patch(`${Config.apikeyuserdata}/${user.id}`, { image: base64String })
-          .then(response => {
-            console.log('Profile picture uploaded successfully');
+
+        axios
+          .patch(`${Config.apikeyuserdata}/${user.id}`, { image: base64String })
+          .then((response) => {
+            console.log("Profile picture uploaded successfully");
           })
-          .catch(error => {
-            console.error('Error uploading profile picture:', error);
+          .catch((error) => {
+            console.error("Error uploading profile picture:", error);
           });
       };
-  
+
       reader.readAsDataURL(profilePicture);
     }
   };
@@ -132,190 +140,199 @@ const Profile = () => {
     return formErrors;
   };
 
-  return (<>
-    <div className="container-p">
-      {isEditing ? (
-        <Button onClick={handleSaveClick} className="edit-btn">
-          <BsSave />
-        </Button>
-      ) : (
-        <Button onClick={handleEditClick} className="edit-btn">
-          <BsPencilSquare />
-        </Button>
-      )}
-      <Typography variant="h5" className="Profile-heading">
-        Profile Section
-      </Typography>
-      <div className="main-container">
-      <div>
-      <div 
-          className="profile-photo"
-        >
-           {editedUser.image ? (
-          <img src={editedUser.image} alt="Profile" className="profile-picture" />
+  return (
+    <>
+      <div className="container-p">
+        {isEditing ? (
+          <Button onClick={handleSaveClick} className="edit-btn">
+            <BsSave />
+          </Button>
         ) : (
-          <FaUserCircle size={80} className="uname" />
+          <Button onClick={handleEditClick} className="edit-btn">
+            <BsPencilSquare />
+          </Button>
         )}
-      </div>
-      <div className="profile-uplod">
-        {isEditing && ( <div>
-        <input
-                  type="file"
-                  accept="image/*"
-                  onChange={handleProfilePictureChange}
+        <Typography variant="h5" className="Profile-heading">
+          Profile Section
+        </Typography>
+        <div className="main-container">
+          <div>
+            <div className="profile-photo">
+              {editedUser.image ? (
+                <img
+                  src={editedUser.image}
+                  alt="Profile"
+                  className="profile-picture"
                 />
+              ) : (
+                <FaUserCircle size={80} className="uname" />
+              )}
+            </div>
+            <div className="profile-uplod">
+              {isEditing && (
+                <div>
+                  <input
+                    type="file"
+                    accept="image/*"
+                    onChange={handleProfilePictureChange}
+                  />
 
-                <Button onClick={handleProfilePictureUpload}>
-                  Upload Profile Picture
-                </Button>
-        </div>) }
-      </div>
-      </div>
-        <div className="p-text">
-          {isEditing ? (
-            <>
-              <div className="column">
-                <TextField
-                  name="name"
-                  label="Name"
-                  value={editedUser.name}
-                  onChange={handleChange}
-                  className="text-field"
-                  disabled={!isEditing}
-                  error={!!errors.name}
-                  helperText={errors.name}
-                />
-
-                <TextField
-                  name="id"
-                  label="User ID"
-                  value={editedUser.id}
-                  onChange={handleChange}
-                  InputProps={{
-                    readOnly: true,
-                  }}
-                  className="text-field"
-                />
-
-                <TextField
-                  name="address"
-                  label="Address"
-                  value={editedUser.address}
-                  onChange={handleChange}
-                  className="text-field"
-                  disabled={!isEditing}
-                  error={!!errors.address}
-                  helperText={errors.address}
-                />
-                <Typography variant="body1" component="div">
-                  Gender:
-                  <RadioGroup
-                    name="gender"
-                    value={editedUser.gender}
+                  <Button onClick={handleProfilePictureUpload}>
+                    Upload Profile Picture
+                  </Button>
+                </div>
+              )}
+            </div>
+          </div>
+          <div className="p-text">
+            {isEditing ? (
+              <>
+                <div className="column">
+                  <TextField
+                    name="name"
+                    label="Name"
+                    value={editedUser.name}
                     onChange={handleChange}
-                    row
+                    className="text-field"
                     disabled={!isEditing}
-                  >
-                    <FormControlLabel
-                      value="male"
-                      control={<Radio />}
-                      label="Male"
-                    />
-                    <FormControlLabel
-                      value="female"
-                      control={<Radio />}
-                      label="Female"
-                    />
-                  </RadioGroup>
-                  {!!errors.gender && (
-                    <Typography variant="body2" color="error">
-                      {errors.gender}
-                    </Typography>
-                  )}
-                </Typography>
-                
-              </div>
-              <div>
-                <TextField
-                  name="zipCode"
-                  label="Zip Code"
-                  value={editedUser.zipCode}
-                  onChange={handleChange}
-                  className="text-field"
-                  disabled={!isEditing}
-                  error={!!errors.zipCode}
-                  helperText={errors.zipCode}
-                />
+                    error={!!errors.name}
+                    helperText={errors.name}
+                  />
 
-                <TextField
-                  name="email"
-                  label="Email"
-                  value={editedUser.email}
-                  onChange={handleChange}
-                  className="text-field"
-                  disabled={!isEditing}
-                  error={!!errors.email}
-                  helperText={errors.email}
-                />
+                  <TextField
+                    name="id"
+                    label="User ID"
+                    value={editedUser.id}
+                    onChange={handleChange}
+                    InputProps={{
+                      readOnly: true,
+                    }}
+                    className="text-field"
+                  />
 
-                <TextField
-                  name="phone"
-                  label="Phone"
-                  value={editedUser.phone}
-                  onChange={handleChange}
-                  className="text-field"
-                  disabled={!isEditing}
-                  error={!!errors.phone}
-                  helperText={errors.phone}
-                />
-              </div>
-            </>
-          ) : (
-            <>
-              <div >
-                <Typography variant="h6">Name: {user.name}</Typography>
-                <Typography variant="body1">ID: {user.id}</Typography>
-                <Typography variant="body1">Address: {user.address}</Typography>
-                <Typography variant="body1">Zip Code: {user.zipCode}</Typography>
-                <Typography variant="body1">Email: {user.email}</Typography>
-                <Typography variant="body1">Phone: {user.phone}</Typography>
-                <Typography variant="body1">Gender: {user.gender}</Typography>
-              </div>
-            </>
-          )}
+                  <TextField
+                    name="address"
+                    label="Address"
+                    value={editedUser.address}
+                    onChange={handleChange}
+                    className="text-field"
+                    disabled={!isEditing}
+                    error={!!errors.address}
+                    helperText={errors.address}
+                  />
+                  <Typography variant="body1" component="div">
+                    Gender:
+                    <RadioGroup
+                      name="gender"
+                      value={editedUser.gender}
+                      onChange={handleChange}
+                      row
+                      disabled={!isEditing}
+                    >
+                      <FormControlLabel
+                        value="male"
+                        control={<Radio />}
+                        label="Male"
+                      />
+                      <FormControlLabel
+                        value="female"
+                        control={<Radio />}
+                        label="Female"
+                      />
+                    </RadioGroup>
+                    {!!errors.gender && (
+                      <Typography variant="body2" color="error">
+                        {errors.gender}
+                      </Typography>
+                    )}
+                  </Typography>
+                </div>
+                <div>
+                  <TextField
+                    name="zipCode"
+                    label="Zip Code"
+                    value={editedUser.zipCode}
+                    onChange={handleChange}
+                    className="text-field"
+                    disabled={!isEditing}
+                    error={!!errors.zipCode}
+                    helperText={errors.zipCode}
+                  />
+
+                  <TextField
+                    name="email"
+                    label="Email"
+                    value={editedUser.email}
+                    onChange={handleChange}
+                    className="text-field"
+                    disabled={!isEditing}
+                    error={!!errors.email}
+                    helperText={errors.email}
+                  />
+
+                  <TextField
+                    name="phone"
+                    label="Phone"
+                    value={editedUser.phone}
+                    onChange={handleChange}
+                    className="text-field"
+                    disabled={!isEditing}
+                    error={!!errors.phone}
+                    helperText={errors.phone}
+                  />
+                </div>
+              </>
+            ) : (
+              <>
+                <div>
+                  <Typography variant="h6">Name: {user.name}</Typography>
+                  <Typography variant="body1">ID: {user.id}</Typography>
+                  <Typography variant="body1">
+                    Address: {user.address}
+                  </Typography>
+                  <Typography variant="body1">
+                    Zip Code: {user.zipCode}
+                  </Typography>
+                  <Typography variant="body1">Email: {user.email}</Typography>
+                  <Typography variant="body1">Phone: {user.phone}</Typography>
+                  <Typography variant="body1">Gender: {user.gender}</Typography>
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+        <div className="social-media">
+          <Typography variant="h6" className="s-heading">
+            Social Media
+          </Typography>
+          <Link
+            href="https://www.facebook.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="s-li mx-2"
+          >
+            <FaFacebook className="icons" />
+          </Link>
+          <Link
+            href="https://www.twitter.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="s-li mx-2"
+          >
+            <FaTwitter className="icons" />
+          </Link>
+          <Link
+            href="https://www.linkedin.com/in/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="s-li mx-2"
+          >
+            <FaLinkedin className="icons" />
+          </Link>
         </div>
       </div>
-      <div className="social-media">
-        <Typography variant="h6" className="s-heading">
-          Social Media
-        </Typography>
-        <Link
-          href="https://www.facebook.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="s-li mx-2"
-        >
-          <FaFacebook className="icons" />
-        </Link>
-        <Link
-          href="https://www.twitter.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="s-li mx-2"
-        >
-          <FaTwitter className="icons" />
-        </Link>
-        <Link
-          href="https://www.linkedin.com/in/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="s-li mx-2"
-        >
-          <FaLinkedin className="icons" />
-        </Link>
-      </div>
-    </div>
-    <Footer/></>
+      <Footer />
+    </>
   );
 };
 
