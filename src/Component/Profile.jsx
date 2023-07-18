@@ -21,6 +21,7 @@ import { BsPencilSquare, BsSave } from "react-icons/bs";
 import validator from "validator";
 import { useContext } from "react";
 import Footer from "./Footer";
+import {  toast } from 'react-toastify';
 
 const Profile = () => {
   const { user, setuser } = useContext(Acontext);
@@ -39,7 +40,7 @@ const Profile = () => {
       axios
         .patch(`${Config.apikeyuserdata}/${user.id}`, editedUser)
         .then((response) => {
-          alert("User updated successfully:");
+          toast.success("User updated successfully:");
           setIsEditing(false);
           fetchData();
         })

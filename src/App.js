@@ -12,6 +12,8 @@ import Cart from "./Component/Cart";
 import Profile from "./Component/Profile";
 import ProductDetail from "./Component/ProductDetail";
 import OrderHistory from "./Component/OrderHistory";
+import { ToastContainer } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 export const Acontext = createContext();
 
 const App = () => {
@@ -39,6 +41,7 @@ const App = () => {
   return (
     <Acontext.Provider value={{ product,setproduct,search, setSearch, data, setdata, cartItems, setCartItems, isLogin, setisLogin, user, setuser }}>
       <Navbar />
+      <ToastContainer position="top-center" autoClose={2000}/>
       <Routes>
         <Route path="/alldata" element={<GetData />} />
         <Route path="/" element={<Product />} />

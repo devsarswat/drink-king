@@ -5,45 +5,83 @@ import axios from "axios";
 import Config from "../Config";
 import Footer from "./Footer";
 import { v4 as uuidv4 } from "uuid";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const ProductDetail = () => {
-  const { product, setCartItems, user ,isLogin} = useContext(Acontext);
+  const { product, setCartItems, user, isLogin } = useContext(Acontext);
+  const nevigate = useNavigate();
 
   const handleAddToCart = (product) => {
-    const usercart = { userid: user.id, ...product };
+    const currentDate = new Date();
+    const generatedUuid = uuidv4();
+    const truncatedUuid = generatedUuid.slice(0, 5);
+    const usercart = {
+      id: truncatedUuid,
+      userid: user.id,
+      date: currentDate,
+      ...displayedProduct,
+    };
     axios
       .post(Config.apikeycart, usercart)
       .then((res) => {
         console.log(res);
+        toast.success("Product Added to Cart")
       })
       .catch((error) => {
         console.log(error);
+        toast.error("Pleas Try Again")
       });
     setCartItems((prevCartItems) => [...prevCartItems, product]);
   };
   const handleBuynow = (displayedProduct) => {
     const currentDate = new Date();
+    const generatedUuid = uuidv4();
+    const truncatedUuid = generatedUuid.slice(0, 5);
     const usercart = {
-      id: uuidv4(),
+      id: truncatedUuid,
       userid: user.id,
       date: currentDate,
       ...displayedProduct,
     };
-    const confirmResult = window.confirm("Are you sure to order this Product?");
-  
-    if (confirmResult) {
-      axios
-        .post(Config.apikeyorder, usercart)
-        .then((res) => {
-          console.log(res);
-          alert("Your product added successfully");
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    } else {
-      console.log("Product addition canceled");
-    }
+    toast(
+      <div>
+        <p>Are you sure to order this product?</p>
+        <button
+          onClick={() => {
+            axios
+              .post(Config.apikeyorder, usercart)
+              .then((res) => {
+                console.log(res);
+                toast.success("Your product added successfully");
+              })
+              .catch((error) => {
+                console.log(error);
+              });
+            toast.dismiss();
+          }}
+          className="btn btn-primary"
+        >
+          Yes
+        </button>
+        <button
+          onClick={() => {
+            console.log("Product addition canceled");
+            toast.dismiss();
+          }}
+          className="btn btn-outline mx-2"
+        >
+          Cancel
+        </button>
+      </div>,
+      {
+        closeButton: false,
+        hideProgressBar: true,
+        draggable: false,
+        pauseOnHover: true,
+        autoClose: false,
+      }
+    );
   };
 
   const calculateDiscountedPrice = () => {
@@ -114,8 +152,11 @@ const ProductDetail = () => {
             variant="contained"
             color="primary"
             className="buy-now-button my-2"
-            onClick={() => handleBuynow(displayedProduct)}
-            disabled={!isLogin}
+            onClick={
+              isLogin
+                ? () => handleBuynow(displayedProduct)
+                : () => nevigate("/login")
+            }
           >
             Buy Now
           </Button>
@@ -130,7 +171,7 @@ const ProductDetail = () => {
           </Button>
         </div>
       </div>
-      <Footer />{" "}
+      <Footer />
     </>
   );
 };

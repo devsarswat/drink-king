@@ -7,6 +7,8 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import axios from "axios";
 import Config from "../Config";
+import { v4 as uuidv4 } from "uuid";
+import { toast } from "react-toastify";
 
 const Cart = () => {
   const { cartItems, setCartItems, user } = useContext(Acontext);
@@ -54,52 +56,56 @@ const Cart = () => {
   };
 
   const handleBuyNow = (variety) => {
-    const usercart = { userid: user.id, ...variety };
- 
-    const confirmResult = window.confirm("Are you sure you want to add this product to your cart?");
+    const currentDate = new Date();
+    const generatedUuid = uuidv4();
+    const truncatedUuid = generatedUuid.slice(0, 5);
+    const usercart = {
+      id: truncatedUuid,
+      userid: user.id,
+      date: currentDate,
+      ...variety,
+    };
   
-    if (confirmResult) {
-      axios
-        .post(Config.apikeyorder, usercart)
-        .then((res) => {
-          console.log(res);
-          alert("Your product added successfully");
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    } else {
-      console.log("Product addition canceled");
-    }
+    toast(
+      <div>
+        <p>Are you sure to order this product?</p>
+        <button
+          onClick={() => {
+            axios
+              .post(Config.apikeyorder, usercart)
+              .then((res) => {
+                console.log(res);
+                toast.success("Your product added successfully");
+              })
+              .catch((error) => {
+                console.log(error);
+                toast.error("Pleas Try Again")
+              });
+            toast.dismiss();
+          }}
+          className="btn btn-primary"
+        >
+          Yes
+        </button>
+        <button
+          onClick={() => {
+            console.log("Product addition canceled");
+            toast.dismiss();
+          }}
+          className="btn btn-secondary mx-2"
+        >
+          Cancel
+        </button>
+      </div>,
+      {
+        closeButton: false,
+        hideProgressBar: true,
+        draggable: false,
+        pauseOnHover: true,
+        autoClose: false,
+      }
+    );
   };
-  //   const handleOrder = () => {
-  //     const orderPromises = filteredItems.map((item) => {
-  //       const currentDate = new Date();
-  //       const itemWithDate = { ...item, date: currentDate };
-  //       return axios.post(Config.apikeyorder, itemWithDate);
-  //     });
-
-  //     Promise.all(orderPromises)
-  //       .then((res) => {
-  //         console.log(res);
-  //         alert("Your products were added successfully");
-  //         const deletePromises = filteredItems.map((item) => {
-  //           return axios.delete(`${Config.apikeycart}/${item.id}`);
-  //         });
-
-  //       Promise.all(deletePromises)
-  //         .then((res) => {
-  //           console.log(res);
-  //           setFilteredItems([]);
-  //         })
-  //         .catch((error) => {
-  //           console.log(error);
-  //         });
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // };
   const handleOrder = async () => {
     try {
       const orderResponses = [];
@@ -118,26 +124,58 @@ const Cart = () => {
   
       console.log(orderResponses);
   
-      const confirmation = window.confirm("Are you sure to order all this Product?");
-      if (!confirmation) {
-        return; // If the user clicks "Cancel", exit the function
-      }
+      toast(
+        <div>
+          <p>Are you sure to order all these products?</p>
+          <button
+            onClick={async () => {
+              toast.dismiss();
+              const confirmation = await new Promise((resolve) => {
+                resolve(true);
+              });
   
-      alert("Your products were added successfully");
+              if (!confirmation) {
+                return; // If the user clicks "Cancel", exit the function
+              }
   
-      for (const item of filteredItems) {
-        const deleteResponse = await axios.delete(
-          `${Config.apikeycart}/${item.id}`
-        );
-        deleteResponses.push(deleteResponse);
-      }
+              toast.success("Your products were added successfully");
   
-      console.log(deleteResponses);
-      setFilteredItems([]);
+              for (const item of filteredItems) {
+                const deleteResponse = await axios.delete(
+                  `${Config.apikeycart}/${item.id}`
+                );
+                deleteResponses.push(deleteResponse);
+              }
+  
+              console.log(deleteResponses);
+              setFilteredItems([]);
+            }}
+            className="btn btn-primary"
+          >
+            Yes
+          </button>
+          <button
+            onClick={() => {
+              toast.dismiss();
+            }}
+            className="btn btn-secondary mx-2"
+          >
+            Cancel
+          </button>
+        </div>,
+        {
+          closeButton: false,
+          hideProgressBar: true,
+          draggable: false,
+          pauseOnHover: true,
+          autoClose: false,
+        }
+      );
     } catch (error) {
       console.log(error);
     }
   };
+  
   
 
   const renderCartItems = () => {

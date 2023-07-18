@@ -4,6 +4,7 @@ import { TextField, Button, Typography } from "@mui/material";
 import validator from "validator";
 import { useNavigate } from "react-router-dom";
 import Config from "../Config";
+import {  toast } from 'react-toastify'
 
 const Signin = () => {
   const navigate = useNavigate();
@@ -34,12 +35,12 @@ const Signin = () => {
         .post(Config.apikeyuserdata, formData)
         .then((res) => {
           console.log(res.data);
-          alert("Registration Successfully");
+          toast.success("Registration Successfully");
           navigate("/login");
         })
         .catch((error) => {
           console.log(error);
-          alert("Please Try Again");
+          toast.error("Please Try Again");
         });
     } else {
       setErrors(validationErrors);
@@ -161,6 +162,7 @@ const Signin = () => {
           </Button>
         </form>
       </div>
+      
     </div>
   );
 };

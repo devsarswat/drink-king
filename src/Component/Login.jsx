@@ -6,6 +6,7 @@ import { Acontext } from "../App";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Config from "../Config";
+import { toast } from 'react-toastify';
 
 const Login = () => {
   const { setisLogin, setuser } = useContext(Acontext);
@@ -41,22 +42,22 @@ const Login = () => {
             if (matchingUser) {
               if (matchingUser.password === formData.password) {
                 setuser(matchingUser);
-                alert("Login Successful");
+                toast.success("Login Successful");
                 setFormData(data);
                 setisLogin(matchingUser);
                 navigate("/");
                 localStorage.setItem("userid", JSON.stringify(matchingUser));
               } else {
-                alert("Invalid password. Please try again.");
+                toast.error("Invalid password. Please try again.");
               }
             } else {
-              alert("Invalid email. Please try again.");
+              toast.error("Invalid email. Please try again.");
             }
           }
         })
         .catch((error) => {
           console.log(error);
-          alert("Server Error. Please Try Again");
+          toast.error("Server Error. Please Try Again");
           setFormData(data);
         });
     } else {
