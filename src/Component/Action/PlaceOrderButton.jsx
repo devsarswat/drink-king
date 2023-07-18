@@ -34,7 +34,7 @@ const PlaceOrderButton = ({ filteredItems, setFilteredItems }) => {
               });
 
               if (!confirmation) {
-                return; // If the user clicks "Cancel", exit the function
+                return; 
               }
 
               toast.success('Your products were added successfully');
