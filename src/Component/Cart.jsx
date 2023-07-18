@@ -7,8 +7,8 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import axios from "axios";
 import Config from "../Config";
-import { v4 as uuidv4 } from "uuid";
-import { toast } from "react-toastify";
+import BuyNowButton from "./Action/BuyNowButton";
+import PlaceOrderButton from "./Action/PlaceOrderButton";
 
 const Cart = () => {
   const { cartItems, setCartItems, user } = useContext(Acontext);
@@ -26,7 +26,7 @@ const Cart = () => {
       .catch((error) => {
         console.log(error);
       });
-  }, [setCartItems, user]);
+  }, [setCartItems]);
 
   useEffect(() => {
     const filteredItems = cartItems.filter((item) => item.userid === user.id);
@@ -54,129 +54,6 @@ const Cart = () => {
         console.log(error);
       });
   };
-
-  const handleBuyNow = (variety) => {
-    const currentDate = new Date();
-    const generatedUuid = uuidv4();
-    const truncatedUuid = generatedUuid.slice(0, 5);
-    const usercart = {
-      id: truncatedUuid,
-      userid: user.id,
-      date: currentDate,
-      ...variety,
-    };
-  
-    toast(
-      <div>
-        <p>Are you sure to order this product?</p>
-        <button
-          onClick={() => {
-            axios
-              .post(Config.apikeyorder, usercart)
-              .then((res) => {
-                console.log(res);
-                toast.success("Your product added successfully");
-              })
-              .catch((error) => {
-                console.log(error);
-                toast.error("Pleas Try Again")
-              });
-            toast.dismiss();
-          }}
-          className="btn btn-primary"
-        >
-          Yes
-        </button>
-        <button
-          onClick={() => {
-            console.log("Product addition canceled");
-            toast.dismiss();
-          }}
-          className="btn btn-secondary mx-2"
-        >
-          Cancel
-        </button>
-      </div>,
-      {
-        closeButton: false,
-        hideProgressBar: true,
-        draggable: false,
-        pauseOnHover: true,
-        autoClose: false,
-      }
-    );
-  };
-  const handleOrder = async () => {
-    try {
-      const orderResponses = [];
-      const deleteResponses = [];
-  
-      for (const item of filteredItems) {
-        const currentDate = new Date();
-        const itemWithDate = { ...item, date: currentDate };
-  
-        const orderResponse = await axios.post(
-          Config.apikeyorder,
-          itemWithDate
-        );
-        orderResponses.push(orderResponse);
-      }
-  
-      console.log(orderResponses);
-  
-      toast(
-        <div>
-          <p>Are you sure to order all these products?</p>
-          <button
-            onClick={async () => {
-              toast.dismiss();
-              const confirmation = await new Promise((resolve) => {
-                resolve(true);
-              });
-  
-              if (!confirmation) {
-                return; // If the user clicks "Cancel", exit the function
-              }
-  
-              toast.success("Your products were added successfully");
-  
-              for (const item of filteredItems) {
-                const deleteResponse = await axios.delete(
-                  `${Config.apikeycart}/${item.id}`
-                );
-                deleteResponses.push(deleteResponse);
-              }
-  
-              console.log(deleteResponses);
-              setFilteredItems([]);
-            }}
-            className="btn btn-primary"
-          >
-            Yes
-          </button>
-          <button
-            onClick={() => {
-              toast.dismiss();
-            }}
-            className="btn btn-secondary mx-2"
-          >
-            Cancel
-          </button>
-        </div>,
-        {
-          closeButton: false,
-          hideProgressBar: true,
-          draggable: false,
-          pauseOnHover: true,
-          autoClose: false,
-        }
-      );
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  
-  
 
   const renderCartItems = () => {
     const uniqueItems = {};
@@ -209,14 +86,8 @@ const Cart = () => {
           <Typography variant="body2" color="text.secondary" className="my-2">
             Quantity: {item.quantity}
           </Typography>
-          <Button
-            variant="contained"
-            color="primary"
-            className="buy-now-button my-2 mx-2"
-            onClick={() => handleBuyNow(item)}
-          >
-            Buy Now
-          </Button>
+          
+          <BuyNowButton user={user} variety={item} />
           <Button
             variant="outlined"
             color="primary"
@@ -260,14 +131,7 @@ const Cart = () => {
             <Typography variant="body2" className="Text-price">
               Total Price: ₹ {totalPrice}
             </Typography>
-            <Button
-              variant="contained"
-              color="warning"
-              className="Place-Order-button my-2"
-              onClick={handleOrder}
-            >
-              Place Order
-            </Button>
+            <PlaceOrderButton filteredItems={filteredItems} setFilteredItems={setFilteredItems} />
           </CardContent>
         </Card>
       </div>

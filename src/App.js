@@ -13,7 +13,7 @@ import Profile from "./Component/Profile";
 import ProductDetail from "./Component/ProductDetail";
 import OrderHistory from "./Component/OrderHistory";
 import { ToastContainer } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
 export const Acontext = createContext();
 
 const App = () => {

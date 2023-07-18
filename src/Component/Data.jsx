@@ -7,12 +7,10 @@ import {
   Button,
 } from "@mui/material";
 import { Acontext } from "../App";
-import axios from "axios";
 import Popup from "./Popup";
-import Config from "../Config";
 import { useNavigate } from "react-router-dom";
-import { v4 as uuidv4 } from "uuid";
-import {  toast } from 'react-toastify'
+import BuyNowButton from "./Action/BuyNowButton";
+import AddToCartButton from "./Action/AddToCartButton";
 
 const ITEMS_PER_PAGE = 6;
 
@@ -50,77 +48,6 @@ const Data = () => {
   const handleSort = (type) => {
     setSortType((prevSortType) => (prevSortType === type ? null : type));
   };
-
-  const handleAddToCart = (variety) => {
-    const generatedUuid = uuidv4();
-    const truncatedUuid = generatedUuid.slice(0, 5);
-    const usercart = { id: truncatedUuid, userid: user.id, ...variety };
-    axios
-      .post(Config.apikeycart, usercart)
-      .then((res) => {
-        console.log(res);
-        toast.success("Product Added to Cart")
-      })
-      .catch((error) => {
-        console.log(error);
-        toast.error("Pleas Try Again")
-      });
-    setCartItems((prevCartItems) => [...prevCartItems, variety]);
-  };
-  
-
-
-  const handleBuynow = (variety) => {
-    const currentDate = new Date();
-    const generatedUuid = uuidv4();
-    const truncatedUuid = generatedUuid.slice(0, 5);
-    const usercart = {
-      id: truncatedUuid,
-      userid: user.id,
-      date: currentDate,
-      ...variety,
-    };
-  
-    toast(
-      <div>
-        <p>Are you sure to order this product?</p>
-        <button
-          onClick={() => {
-            axios
-              .post(Config.apikeyorder, usercart)
-              .then((res) => {
-                console.log(res);
-                toast.success("Your product added successfully");
-              })
-              .catch((error) => {
-                console.log(error);
-              });
-            toast.dismiss();
-          }}
-          className="btn btn-primary"
-        >
-          Yes
-        </button>
-        <button
-          onClick={() => {
-            console.log("Product addition canceled");
-            toast.dismiss();
-          }}
-          className="btn btn-secondary mx-2"
-        >
-          Cancel
-        </button>
-      </div>,
-      {
-        closeButton: false,
-        hideProgressBar: true,
-        draggable: false,
-        pauseOnHover: true,
-        autoClose: false,
-      }
-    );
-  };
-  
 
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
   const displayedVarieties = filteredVarieties.slice(
@@ -205,25 +132,9 @@ const Data = () => {
                   </span>
                 </Typography>
               </div>
-              {isLogin && (
-                <Button
-                  variant="contained"
-                  color="primary"
-                  className="buy-now-button my-2 mx-2"
-                  onClick={() => handleBuynow(variety)}
-                >
-                  Buy Now
-                </Button>
-              )}
-              <Button
-                variant="outlined"
-                color="primary"
-                className="add-to-cart-button"
-                disabled={!isLogin}
-                onClick={() => handleAddToCart(variety)}
-              >
-                Add to Cart
-              </Button>
+              
+              {isLogin && <BuyNowButton user={user} variety={variety} />}
+              <AddToCartButton user={user} variety={variety} setCartItems={setCartItems} disabled={!isLogin}/>
             </CardContent>
           </Card>
         ))}
