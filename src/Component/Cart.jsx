@@ -110,7 +110,7 @@ const Cart = () => {
     });
 
     return Object.values(uniqueItems).map((item, index) => (
-      <Card key={index} className="card">
+      <Card key={index} className="card-1">
         <CardMedia
           component="img"
           height="140"
