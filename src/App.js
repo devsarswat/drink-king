@@ -14,6 +14,7 @@ import ProductDetail from "./Component/ProductDetail";
 import OrderHistory from "./Component/OrderHistory";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Loading from "./Component/Action/Loading";
 export const Acontext = createContext();
 
 const App = () => {
@@ -32,14 +33,23 @@ const App = () => {
   const [user, setuser] = useState(udata);
   console.log("user",user)
   console.log("islogin",isLogin)
+  const [isLoading, setIsLoading] = useState(true);
+ 
 
   useEffect(() => {
     localStorage.setItem("productData", JSON.stringify(data));
+    setTimeout(() => {
+      setIsLoading(false);
+    },500);
   }, [data]);
 
   
   return (
-    <Acontext.Provider value={{ product,setproduct,search, setSearch, data, setdata, cartItems, setCartItems, isLogin, setisLogin, user, setuser }}>
+    <>
+    {isLoading ? (
+        <Loading />
+      ) : (
+    <Acontext.Provider value={{ product,setproduct,search, setSearch, data, setdata, cartItems, setCartItems, isLogin, setisLogin, user, setuser}}>
       <Navbar />
       <ToastContainer position="top-center" autoClose={2000}/>
       <Routes>
@@ -54,6 +64,8 @@ const App = () => {
         <Route path="/productdetail" element={<ProductDetail />} />
       </Routes>
     </Acontext.Provider>
+      )}
+  </>
   );
 };
 

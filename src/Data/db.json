@@ -1,5 +1,52 @@
 {
-  "cart": [],
+  "cart": [
+    {
+      "id": "3858a",
+      "userid": 2,
+      "name": "Black Tea",
+      "description": "A fully oxidized tea with a bold and robust flavor.",
+      "origin": "Various",
+      "strength": "Strong",
+      "price": " 150",
+      "image": "https://images.unsplash.com/photo-1617191880520-c6a69e04fa75?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0Njc1NzN8MHwxfHNlYXJjaHwxfHxCbGFjayUyMFRlYXxlbnwwfHx8fDE2ODgxMzE3MjJ8MA&ixlib=rb-4.0.3&q=80&w=400",
+      "discount": 10,
+      "quantity": 4
+    },
+    {
+      "id": "5e308",
+      "userid": 2,
+      "name": "Black Tea",
+      "description": "A fully oxidized tea with a bold and robust flavor.",
+      "origin": "Various",
+      "strength": "Strong",
+      "price": " 150",
+      "image": "https://images.unsplash.com/photo-1617191880520-c6a69e04fa75?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0Njc1NzN8MHwxfHNlYXJjaHwxfHxCbGFjayUyMFRlYXxlbnwwfHx8fDE2ODgxMzE3MjJ8MA&ixlib=rb-4.0.3&q=80&w=400",
+      "discount": 10,
+      "quantity": 2
+    },
+    {
+      "id": "c5fba",
+      "userid": 2,
+      "name": "Espresso",
+      "description": "A concentrated coffee beverage brewed by forcing hot water under high pressure through finely ground coffee.",
+      "origin": "Italy",
+      "strength": "Strong",
+      "price": "150",
+      "image": "https://images.unsplash.com/photo-1610889556528-9a770e32642f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0Njc1NzN8MHwxfHNlYXJjaHwxfHxFc3ByZXNzb3xlbnwwfHx8fDE2ODgxMjkxODh8MA&ixlib=rb-4.0.3&q=80&w=400",
+      "quantity": 1
+    },
+    {
+      "id": "7d9f9",
+      "userid": 2,
+      "name": "Latte",
+      "description": "A coffee drink made with espresso and steamed milk.",
+      "origin": "Italy",
+      "strength": "Medium",
+      "price": "170",
+      "image": "https://images.unsplash.com/photo-1541167760496-1628856ab772?ixid=M3w0Njc1NzN8MHwxfHNlYXJjaHwxfHxMYXR0ZXxlbnwwfHx8fDE2ODgxMjk2NDd8MA&ixlib=rb-4.0.3",
+      "quantity": 3
+    }
+  ],
   "Order": [
     {
       "id": "241d4",
@@ -288,6 +335,68 @@
       "price": "150",
       "image": "https://images.unsplash.com/photo-1610889556528-9a770e32642f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0Njc1NzN8MHwxfHNlYXJjaHwxfHxFc3ByZXNzb3xlbnwwfHx8fDE2ODgxMjkxODh8MA&ixlib=rb-4.0.3&q=80&w=400",
       "date": "2023-07-18T10:15:03.426Z"
+    },
+    {
+      "id": "6df2a",
+      "userid": 2,
+      "name": "Espresso",
+      "description": "A concentrated coffee beverage brewed by forcing hot water under high pressure through finely ground coffee.",
+      "origin": "Italy",
+      "strength": "Strong",
+      "price": "150",
+      "image": "https://images.unsplash.com/photo-1610889556528-9a770e32642f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0Njc1NzN8MHwxfHNlYXJjaHwxfHxFc3ByZXNzb3xlbnwwfHx8fDE2ODgxMjkxODh8MA&ixlib=rb-4.0.3&q=80&w=400",
+      "quantity": 4,
+      "date": "2023-07-19T07:09:44.942Z"
+    },
+    {
+      "id": "7990d",
+      "userid": 2,
+      "name": "Cappuccino",
+      "description": "A coffee-based drink made with espresso, hot milk, and steamed milk foam.",
+      "origin": "Italy",
+      "strength": "Medium",
+      "price": "180",
+      "image": "https://source.unsplash.com/960x520/?coffee,Cappuccino",
+      "quantity": 2,
+      "date": "2023-07-19T07:09:45.000Z"
+    },
+    {
+      "id": "8d096",
+      "userid": 2,
+      "name": "Black Tea",
+      "description": "A fully oxidized tea with a bold and robust flavor.",
+      "origin": "Various",
+      "strength": "Strong",
+      "price": " 150",
+      "image": "https://images.unsplash.com/photo-1617191880520-c6a69e04fa75?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0Njc1NzN8MHwxfHNlYXJjaHwxfHxCbGFjayUyMFRlYXxlbnwwfHx8fDE2ODgxMzE3MjJ8MA&ixlib=rb-4.0.3&q=80&w=400",
+      "discount": 10,
+      "quantity": 3,
+      "date": "2023-07-19T07:09:45.035Z"
+    },
+    {
+      "id": "7acec",
+      "userid": 2,
+      "name": "Espresso",
+      "description": "A concentrated coffee beverage brewed by forcing hot water under high pressure through finely ground coffee.",
+      "origin": "Italy",
+      "strength": "Strong",
+      "price": "150",
+      "image": "https://images.unsplash.com/photo-1610889556528-9a770e32642f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0Njc1NzN8MHwxfHNlYXJjaHwxfHxFc3ByZXNzb3xlbnwwfHx8fDE2ODgxMjkxODh8MA&ixlib=rb-4.0.3&q=80&w=400",
+      "quantity": 1,
+      "date": "2023-07-19T07:13:04.882Z"
+    },
+    {
+      "id": "9a7f9",
+      "userid": 2,
+      "name": "Black Tea",
+      "description": "A fully oxidized tea with a bold and robust flavor.",
+      "origin": "Various",
+      "strength": "Strong",
+      "price": " 150",
+      "image": "https://images.unsplash.com/photo-1617191880520-c6a69e04fa75?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0Njc1NzN8MHwxfHNlYXJjaHwxfHxCbGFjayUyMFRlYXxlbnwwfHx8fDE2ODgxMzE3MjJ8MA&ixlib=rb-4.0.3&q=80&w=400",
+      "discount": 10,
+      "quantity": 4,
+      "date": "2023-07-19T12:34:48.689Z"
     }
   ],
   "data": {

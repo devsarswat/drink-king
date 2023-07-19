@@ -8,7 +8,7 @@ import Config from "../Config";
 
 const Product = () => {
   const navigate = useNavigate();
-  const { setdata } = useContext(Acontext);
+  const { setdata ,setIsLoading} = useContext(Acontext);
 
   const handleCoffee = () => {
     axios
@@ -17,6 +17,7 @@ const Product = () => {
         console.log(res.data);
         setdata(res.data.varieties);
         navigate("/data");
+        setIsLoading(false)
       })
       .catch((error) => console.log(error));
   };
@@ -28,6 +29,7 @@ const Product = () => {
         console.log(res.data);
         setdata(res.data.Teadata);
         navigate("/data");
+        setIsLoading(false)
       })
       .catch((error) => console.log(error));
   };

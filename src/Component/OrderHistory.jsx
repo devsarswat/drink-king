@@ -128,7 +128,7 @@ const OrderHistory = () => {
                       </span>{" "}
                       <span style={{ position: "absolute" }}>{order.id}</span>
                     </Typography>
-                    {/* <Typography variant="body1">
+                    <Typography variant="body1">
                       <span
                         style={{
                           fontWeight: "bold",
@@ -139,7 +139,7 @@ const OrderHistory = () => {
                         Quantity:
                       </span>{" "}
                       {order.quantity ? order.quantity : 1}
-                    </Typography> */}
+                    </Typography>
                   </CardContent>
                 </Card>
               );

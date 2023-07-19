@@ -144,7 +144,7 @@ const GetData = () => {
                 </Typography>
               </div>
               {isLogin && <BuyNowButton user={user} variety={variety} />}
-              <AddToCartButton user={user} variety={variety} setCartItems={setCartItems} disabled={!isLogin}/>
+              <AddToCartButton user={user} variety={variety} setCartItems={setCartItems} quantity={1} disabled={!isLogin}/>
             </CardContent>
           </Card>
         ))}

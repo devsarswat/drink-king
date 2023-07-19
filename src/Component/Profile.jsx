@@ -306,6 +306,7 @@ const Profile = () => {
           <Typography variant="h6" className="s-heading">
             Social Media
           </Typography>
+          <div>
           <Link
             href="https://www.facebook.com/"
             target="_blank"
@@ -330,6 +331,7 @@ const Profile = () => {
           >
             <FaLinkedin className="icons" />
           </Link>
+          </div>
         </div>
       </div>
       <Footer />

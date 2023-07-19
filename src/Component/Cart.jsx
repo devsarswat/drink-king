@@ -33,19 +33,29 @@ const Cart = () => {
     setFilteredItems(filteredItems);
 
     let calculatedTotalPrice = 0;
+    let calculatedItemCount = 0;
+
     filteredItems.forEach((item) => {
-      const itemPrice = parseFloat(item.price);
+      const itemPrice = parseFloat(item.price) * item.quantity; 
       calculatedTotalPrice += itemPrice;
+      calculatedItemCount += item.quantity;
     });
+
     setTotalPrice(calculatedTotalPrice.toFixed(2));
-    setItemCount(filteredItems.length);
+    setItemCount(calculatedItemCount);
   }, [cartItems, user]);
 
-  const handleRemoveItem = (itemId) => {
-    const updatedCartItems = cartItems.filter((item) => item.id !== itemId);
+  const handleIncreaseQuantity = (itemId) => {
+    const updatedCartItems = cartItems.map((item) => {
+      if (item.id === itemId) {
+        const updatedQuantity = item.quantity + 1;
+        return { ...item, quantity: updatedQuantity };
+      }
+      return item;
+    });
 
     axios
-      .delete(`${Config.apikeycart}/${itemId}`)
+      .patch(`${Config.apikeycart}/${itemId}`, { quantity: updatedCartItems.find((item) => item.id === itemId).quantity })
       .then((res) => {
         console.log(res);
         setCartItems(updatedCartItems);
@@ -55,13 +65,47 @@ const Cart = () => {
       });
   };
 
+  const handleDecreaseQuantity = (itemId) => {
+    const updatedCartItems = cartItems.map((item) => {
+      if (item.id === itemId) {
+        const updatedQuantity = item.quantity - 1;
+        return { ...item, quantity: updatedQuantity };
+      }
+      return item;
+    });
+
+    axios
+      .patch(`${Config.apikeycart}/${itemId}`, { quantity: updatedCartItems.find((item) => item.id === itemId).quantity })
+      .then((res) => {
+        console.log(res);
+        setCartItems(updatedCartItems);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const handleRemoveItem = (itemId) => {
+    axios
+      .delete(`${Config.apikeycart}/${itemId}`)
+      .then((res) => {
+        console.log(res);
+        const updatedCartItems = cartItems.filter((item) => item.id !== itemId);
+        setCartItems(updatedCartItems);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   const renderCartItems = () => {
     const uniqueItems = {};
+
     filteredItems.forEach((item) => {
       if (!uniqueItems[item.name]) {
-        uniqueItems[item.name] = { ...item, quantity: 1 };
+        uniqueItems[item.name] = { ...item, quantity: item.quantity };
       } else {
-        uniqueItems[item.name].quantity += 1;
+        uniqueItems[item.name].quantity += item.quantity;
       }
     });
 
@@ -81,12 +125,28 @@ const Cart = () => {
             {item.description}
           </Typography>
           <Typography variant="body2" color="text.secondary" className="my-2">
-            Price: {item.price}
+            Price: ₹{parseFloat(item.price) * item.quantity}
           </Typography>
-          <Typography variant="body2" color="text.secondary" className="my-2">
-            Quantity: {item.quantity}
-          </Typography>
-          
+          <div className="quantity-control">
+            <Button
+              variant="outlined"
+              color="primary"
+              onClick={() => handleDecreaseQuantity(item.id)}
+              disabled={item.quantity === 1}
+            >
+              -
+            </Button>
+            <Typography variant="body2" className="quantity-display">
+              {item.quantity}
+            </Typography>
+            <Button
+              variant="outlined"
+              color="primary"
+              onClick={() => handleIncreaseQuantity(item.id)}
+            >
+              +
+            </Button>
+          </div>
           <BuyNowButton user={user} variety={item} />
           <Button
             variant="outlined"
@@ -131,7 +191,10 @@ const Cart = () => {
             <Typography variant="body2" className="Text-price">
               Total Price: ₹ {totalPrice}
             </Typography>
-            <PlaceOrderButton filteredItems={filteredItems} setFilteredItems={setFilteredItems} />
+            <PlaceOrderButton
+              filteredItems={filteredItems}
+              setFilteredItems={setFilteredItems}
+            />
           </CardContent>
         </Card>
       </div>

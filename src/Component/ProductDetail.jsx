@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Acontext } from "../App";
 import { Button, Typography } from "@mui/material";
 import Footer from "./Footer";
@@ -8,13 +8,14 @@ import AddToCartButton from "./Action/AddToCartButton";
 
 const ProductDetail = () => {
   const { product, setCartItems, user, isLogin } = useContext(Acontext);
-  const nevigate = useNavigate();
-
+  const navigate = useNavigate();
+  const [quantity, setQuantity] = useState(1);
 
   const calculateDiscountedPrice = () => {
     const discountPercentage = displayedProduct.discount || 0;
     const discount = (displayedProduct.price * discountPercentage) / 100;
-    return displayedProduct.price - discount;
+    const totalPrice = (displayedProduct.price - discount) * quantity;
+    return totalPrice;
   };
 
   useEffect(() => {
@@ -26,6 +27,16 @@ const ProductDetail = () => {
   const storedProduct = JSON.parse(localStorage.getItem("product"));
 
   const displayedProduct = product ? product : storedProduct;
+
+  const handleIncreaseQuantity = () => {
+    setQuantity((prevQuantity) => prevQuantity + 1);
+  };
+
+  const handleDecreaseQuantity = () => {
+    if (quantity > 1) {
+      setQuantity((prevQuantity) => prevQuantity - 1);
+    }
+  };
 
   return (
     <>
@@ -58,7 +69,7 @@ const ProductDetail = () => {
                   <span style={{ fontSize: "20px", color: "red" }}>
                     -{displayedProduct.discount}%{" "}
                   </span>{" "}
-                  ₹{calculateDiscountedPrice()}
+                  ₹{calculateDiscountedPrice() / quantity}
                 </Typography>
               </>
             )}
@@ -74,26 +85,59 @@ const ProductDetail = () => {
                 Price: ₹{displayedProduct.price}
               </Typography>
             )}
+            {quantity > 1 && (
+              <Typography variant="body2" className="total-price">
+                Total Price: ₹{calculateDiscountedPrice()}
+              </Typography>
+            )}
           </div>
           {isLogin ? (
-            <BuyNowButton
-              user={user}
-              variety={displayedProduct}
-              variant="contained"
-              color="primary"
-              className="buy-now-button my-2"
-            />
+            <>
+              <div className="quantity-control">
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  onClick={handleDecreaseQuantity}
+                  disabled={quantity === 1}
+                >
+                  -
+                </Button>
+                <Typography variant="body2" className="quantity-display">
+                  {quantity}
+                </Typography>
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  onClick={handleIncreaseQuantity}
+                >
+                  +
+                </Button>
+              </div>
+              <BuyNowButton
+                user={user}
+                variety={displayedProduct}
+                variant="contained"
+                color="primary"
+                className="buy-now-button my-2"
+              />
+            </>
           ) : (
             <Button
               variant="contained"
               color="primary"
               className="buy-now-button my-2"
-              onClick={() => nevigate("/login")}
+              onClick={() => navigate("/login")}
             >
               Buy Now
             </Button>
           )}
-          <AddToCartButton user={user} variety={displayedProduct} setCartItems={setCartItems} disabled={!isLogin} />
+          <AddToCartButton
+            user={user}
+            variety={displayedProduct}
+            setCartItems={setCartItems}
+            disabled={!isLogin}
+            quantity={quantity}
+          />
         </div>
       </div>
       <Footer />
