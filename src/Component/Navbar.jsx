@@ -32,7 +32,7 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary ms-auto mb-2 mb-lg-0">
       <div className="container-fluid">
-        <Link className="navbar-brand mx-4" to="/">
+        <Link className="navbar-brand mx-4" to="/drink-king">
           Drink Kings
         </Link>
         <button
@@ -49,7 +49,7 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item mx-2">
-              <NavLink className="nav-link" aria-current="page" to="/">
+              <NavLink className="nav-link" aria-current="page" to="/drink-king">
                 Home
               </NavLink>
             </li>

@@ -54,7 +54,7 @@ const App = () => {
       <ToastContainer position="top-center" autoClose={2000}/>
       <Routes>
         <Route path="/alldata" element={<GetData />} />
-        <Route path="/" element={<Product />} />
+        <Route path="/drink-king" element={<Product />} />
         <Route path="/data" element={<Data />} />
         <Route path="/profile" element={<PrivateRoute element={<Profile />} />} />
         <Route path="/cart" element={<PrivateRoute element={<Cart />} />} />
