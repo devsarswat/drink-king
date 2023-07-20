@@ -27,13 +27,12 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "concurrently \"npm run start:json-server\" \"react-scripts start\"",
+    "start":  "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-   "deploy": "gh-pages -d build",
-    "start:json-server": "json-server --watch --port 4001 --host 192.168.0.151 ./src/data/db.json"
+   "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
