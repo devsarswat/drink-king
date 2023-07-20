@@ -1,7 +1,7 @@
 {
   "name": "drink_products",
   "version": "0.1.0",
-    "homepage": "https://devsarswat.github.io/drink_king",
+    "homepage": "https://devsarswat.github.io/drink-king",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.1",
