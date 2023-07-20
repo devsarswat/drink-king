@@ -13,6 +13,7 @@
     "axios": "^1.4.0",
     "bootstrap": "^5.3.0",
     "bootstrap-icons": "^1.10.5",
+    "gh-pages": "^5.0.0",
     "json-server": "^0.16.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -30,7 +31,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start:json-server": "json-server --watch --port 4001 --host 192.168.0.173 ./src/data/db.json"
+    "start:json-server": "json-server --watch --port 4001 --host 192.168.0.151 ./src/data/db.json"
   },
   "eslintConfig": {
     "extends": [
