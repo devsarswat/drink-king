@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/drink-king/static/css/main.5558e8f9.css",
-    "main.js": "/drink-king/static/js/main.a03e36d5.js",
+    "main.js": "/drink-king/static/js/main.fae3a78e.js",
     "static/media/account_thin.svg": "/drink-king/static/media/account_thin.d5500462f48e5684162279060bcd73dc.svg",
     "index.html": "/drink-king/index.html",
     "main.5558e8f9.css.map": "/drink-king/static/css/main.5558e8f9.css.map",
-    "main.a03e36d5.js.map": "/drink-king/static/js/main.a03e36d5.js.map"
+    "main.fae3a78e.js.map": "/drink-king/static/js/main.fae3a78e.js.map"
   },
   "entrypoints": [
     "static/css/main.5558e8f9.css",
-    "static/js/main.a03e36d5.js"
+    "static/js/main.fae3a78e.js"
   ]
 }
