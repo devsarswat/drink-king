@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect, useContext } from "react";
-import { HashRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./Component/Navbar";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
@@ -24,7 +24,7 @@ const App = () => {
     return storedUser ? storedUser : null;
   });
   const [search, setSearch] = useState('');
-  const [product, setproduct] = useState();
+  const[product,setproduct]=useState();
   const [isLogin, setisLogin] = useState(udata);
   const [data, setdata] = useState(() => {
     const storedData = localStorage.getItem("productData");
@@ -33,7 +33,7 @@ const App = () => {
   const [cartItems, setCartItems] = useState([]);
   const [user, setuser] = useState(udata);
   const [isLoading, setIsLoading] = useState(true);
-
+ 
   useEffect(() => {
     localStorage.setItem("productData", JSON.stringify(data));
     setTimeout(() => {
@@ -42,29 +42,43 @@ const App = () => {
   }, [data]);
 
   return (
-    <>
+    <Router>
       {isLoading ? (
         <Loading />
       ) : (
-        <Router>
-          <Acontext.Provider value={{ product, setproduct, search, setSearch, data, setdata, cartItems, setCartItems, isLogin, setisLogin, user, setuser }}>
-            <Navbar />
-            <ToastContainer position="top-center" autoClose={2000} />
-            <Routes>
-              <Route path="/alldata" element={<GetData />} />
-              <Route path="/drink-king" element={<Product />} />
-              <Route path="/data" element={<Data />} />
-              <Route path="/profile" element={<PrivateRoute element={<Profile />} />} />
-              <Route path="/cart" element={<PrivateRoute element={<Cart />} />} />
-              <Route path="/order" element={<PrivateRoute element={<OrderHistory />} />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/signin" element={<Signin />} />
-              <Route path="/productdetail" element={<ProductDetail />} />
-            </Routes>
-          </Acontext.Provider>
-        </Router>
+        <Acontext.Provider
+          value={{
+            product,
+            setproduct,
+            search,
+            setSearch,
+            data,
+            setdata,
+            cartItems,
+            setCartItems,
+            isLogin,
+            setisLogin,
+            user,
+            setuser,
+          }}
+        >
+          <Navbar />
+          <ToastContainer position="top-center" autoClose={2000}/>
+          <Routes>
+            <Route path="/alldata" element={<GetData />} />
+            <Route path="/drink-king" element={<Product />} />
+            <Route path="/data" element={<Data />} />
+            <Route path="/profile" element={<PrivateRoute element={<Profile />} />} />
+            <Route path="/cart" element={<PrivateRoute element={<Cart />} />} />
+            <Route path="/order" element={<PrivateRoute element={<OrderHistory />} />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signin" element={<Signin />} />
+            <Route path="/productdetail" element={<ProductDetail />} />
+            <Route path="/*" element={<Product />} />
+          </Routes>
+        </Acontext.Provider>
       )}
-    </>
+    </Router>
   );
 };
 
